@@ -132,9 +132,10 @@ object FusClient : IFusClient<FusClient.Request> {
 
         val body = response.bodyAsText()
 
-        if (request != Request.GENERATE_NONCE && response.is401(body)) {
+        if (request == Request.GENERATE_NONCE) {
+            AuthParamsHandler.extractFile()
+        } else if (response.is401(body)) {
             generateNonce()
-
             return makeReq(request, data)
         }
 

@@ -22,6 +22,7 @@ actual object AuthParamsHandler {
     }
 
     actual suspend fun extractFile() {
+        tempFile.delete()
         tempFile.createNewFile()
         withContext(Dispatchers.IO) {
             App.instance.resources.openRawResource(MR.files.auth_param_dat.rawResId).use { input ->

@@ -20,6 +20,7 @@ actual object AuthParamsHandler {
     }
 
     actual suspend fun extractFile() {
+        tempFile.delete()
         tempFile.createNewFile()
         withContext(Dispatchers.IO) {
             MR.files.auth_param_dat.resourcesClassLoader.getResourceAsStream(MR.files.auth_param_dat.filePath)?.use { input ->

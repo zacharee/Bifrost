@@ -32,6 +32,7 @@ actual object AuthParamsHandler {
     val stream = NSInputStream(NSURL.fileURLWithPath(tempFile.getAbsolutePath()))
 
     actual suspend fun extractFile() {
+        tempFile.delete()
         tempFile.createNewFile()
         NSInputStream(MR.files.auth_param_dat.url).asSource().use { input ->
             tempFile.openOutputStream(append = false, truncate = false)?.use { output ->

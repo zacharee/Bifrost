@@ -282,7 +282,6 @@ object CryptUtils {
      * @param input the nonce to decrypt.
      * @return the decrypted nonce.
      */
-    @OptIn(ExperimentalEncodingApi::class)
     suspend fun decryptNonce(input: String): String {
         return authenticateBlock(input.toByteArray()).toHexString()
     }
