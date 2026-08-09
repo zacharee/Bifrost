@@ -28,7 +28,6 @@ import tk.zwander.common.util.firstElementByTagName
 import tk.zwander.common.util.globalHttpClient
 import tk.zwander.common.util.ketch
 import tk.zwander.common.util.trackOperationProgress
-import kotlin.math.sign
 
 interface IFusClient<Request : IFusClient.IRequest> {
     sealed interface IRequest

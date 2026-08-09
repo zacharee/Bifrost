@@ -178,7 +178,6 @@ object FusClient : IFusClient<FusClient.Request> {
      * @param fileName the name of the file to download.
      * @param start an optional offset. Used for resuming downloads.
      */
-    @OptIn(InternalAPI::class, InternalIoApi::class)
     override suspend fun downloadFile(
         fileName: String,
         start: Long,
