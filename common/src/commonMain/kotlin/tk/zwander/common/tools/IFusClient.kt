@@ -76,7 +76,7 @@ interface IFusClient<Request : IFusClient.IRequest> {
                     destination = Destination(dest.getAbsolutePath()),
                     headers = mapOf(
                         "Authorization" to authV,
-                        "User-Agent" to "Kies2.0_FUS",
+                        "User-Agent" to "Kiss2.0_FUS",
                     ),
                 ),
             )
@@ -120,7 +120,7 @@ interface IFusClient<Request : IFusClient.IRequest> {
                 url(url)
                 headers {
                     append("Authorization", authV)
-                    append("User-Agent", "Kies2.0_FUS")
+                    append("User-Agent", "Kiss2.0_FUS")
                     if (start > 0) {
                         append("Range", "bytes=${start}-")
                     }

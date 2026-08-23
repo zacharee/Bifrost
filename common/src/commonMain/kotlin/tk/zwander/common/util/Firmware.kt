@@ -8,6 +8,6 @@ suspend fun getFirmwareHistoryStringFromSamsung(model: String, region: String): 
     return globalHttpClient.get(
         urlString = "https://fota-cloud-dn.ospserver.net:443/firmware/${region}/${model}/version.xml",
     ) {
-        userAgent("Kies2.0_FUS")
+        userAgent("Kiss2.0_FUS")
     }.run { if (status.isSuccess()) bodyAsText() else null }
 }

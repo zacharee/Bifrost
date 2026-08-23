@@ -9,6 +9,7 @@ import com.linroid.ketch.api.DownloadState
 import com.linroid.ketch.api.KetchError
 import dev.zwander.kotlin.file.IPlatformFile
 import io.ktor.client.plugins.HttpTimeoutConfig
+import io.ktor.client.plugins.auth.clearAuthTokens
 import io.ktor.client.plugins.timeout
 import io.ktor.client.request.headers
 import io.ktor.client.request.prepareRequest
@@ -210,13 +211,24 @@ object FusClient : IFusClient<FusClient.Request> {
             response.headers["Content-MD5"]
         }
 
-        val task = ketch.tasks.value.find { it.request.url == url }
-            ?.let { download ->
-                download.resume(Destination(dest.getAbsolutePath()))
-                download.takeIf {
-                    it.state.value !is DownloadState.Completed
+        val existingTask = try {
+            ketch.tasks.value.find { it.request.url == url }
+                ?.let { download ->
+                    download.resume(Destination(dest.getAbsolutePath()))
+                    download.takeIf {
+                        it.state.value !is DownloadState.Completed
+                    }
                 }
-            } ?: ketch.download(
+        } catch (e: KetchError.Http) {
+            if (e.code == 401) {
+                ketch.tasks.value.findLast { it.request.url == url }?.remove()
+                null
+            } else {
+                throw e
+            }
+        }
+
+        val task = existingTask ?: ketch.download(
             DownloadRequest(
                 url = url,
                 destination = Destination(dest.getAbsolutePath()),

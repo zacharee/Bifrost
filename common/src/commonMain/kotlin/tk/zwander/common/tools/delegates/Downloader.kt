@@ -1,8 +1,10 @@
 package tk.zwander.common.tools.delegates
 
+import com.linroid.ketch.api.KetchError
 import io.ktor.utils.io.core.toByteArray
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.withContext
 import tk.zwander.common.data.BinaryFileInfo
 import tk.zwander.common.tools.CryptUtils
@@ -54,6 +56,8 @@ object Downloader {
             },
         )
 
+        println("Standard success $standard")
+
         if (standard) {
             return
         }
@@ -76,6 +80,8 @@ object Downloader {
         legacy: Boolean,
         onFinish: suspend (error: Boolean, message: String) -> Unit,
     ): Boolean {
+        println("Downloading $legacy")
+
         eventManager.sendEvent(Event.Download.Start)
         model.statusText.value = MR.strings.downloading()
 
@@ -89,12 +95,14 @@ object Downloader {
                         message = exception.message!!,
                         callback = DownloadErrorConfirmCallback(
                             onAccept = {
-                                performDownload(
-                                    info = info!!,
-                                    model = model,
-                                    legacy = legacy,
-                                    onFinish = onFinish,
-                                )
+                                if (!performDownload(
+                                        info = info!!,
+                                        model = model,
+                                        legacy = legacy,
+                                        onFinish = onFinish,
+                                    )) {
+                                    onFinish(true, "")
+                                }
                             },
                             onCancel = {
                                 onFinish(false, "")
@@ -114,21 +122,26 @@ object Downloader {
         )
 
         return if (info != null) {
-            performDownload(info = info, model = model, legacy = legacy, onFinish = onFinish)
-            true
+            try {
+                performDownload(info = info, model = model, legacy = legacy, onFinish = onFinish)
+            } catch (e: Throwable) {
+                println("Error with download $legacy")
+                if (legacy) throw e
+                false
+            }
         } else {
+            println("Unable to retrieve binary info")
             false
         }
     }
 
-    @OptIn(ExperimentalTime::class)
     private suspend fun performDownload(
         info: BinaryFileInfo,
         model: DownloadModel,
         legacy: Boolean,
         onFinish: suspend (error: Boolean, message: String) -> Unit,
-    ) {
-        try {
+    ): Boolean {
+        return try {
             val (path, fileName, size, crc32, v4Key, fwVer, modelType) = info
             val request = Request.createBinaryInit(
                 fileName = fileName,
@@ -139,7 +152,7 @@ object Downloader {
                 legacy = legacy,
             )
 
-            IFusClient.selectClientAndMakeRequest(
+            val result = IFusClient.selectClientAndMakeRequest(
                 request = if (legacy) {
                     FusClientLegacy.Request.BINARY_INIT
                 } else {
@@ -147,6 +160,8 @@ object Downloader {
                 },
                 data = request,
             )
+
+            println("Binary init result $result")
 
             val fullFileName = fileName.replace(
                 ".zip",
@@ -164,11 +179,11 @@ object Downloader {
 
             val encFile = (tempDirectory ?: downloadDirectory)?.child(fullFileName, false) ?: run {
                 onFinish(false, "")
-                return
+                return true
             }
             val extractedEncFile = downloadDirectory?.child(fullFileName, false) ?: run {
                 onFinish(false, "")
-                return
+                return true
             }
             val decFile = downloadDirectory.child(
                 fullFileName.replace(".enc2", "")
@@ -224,7 +239,7 @@ object Downloader {
                 model.speed.value = 0L
                 model.statusText.value = MR.strings.checkingCRC()
                 val result = CryptUtils.checkCrc32(
-                    encFile.openInputStream() ?: return,
+                    encFile.openInputStream() ?: return true,
                     encFile.getLength(),
                     crc32,
                 ) { current, max, bps ->
@@ -242,7 +257,7 @@ object Downloader {
 
                 if (!result) {
                     model.endJob(MR.strings.crcCheckFailed())
-                    return
+                    return true
                 }
             }
 
@@ -267,7 +282,7 @@ object Downloader {
 
                 if (!result) {
                     model.endJob(MR.strings.md5CheckFailed())
-                    return
+                    return true
                 }
             }
 
@@ -277,11 +292,11 @@ object Downloader {
 
                 val input = encFile.openInputStream() ?: run {
                     model.endJob("")
-                    return
+                    return true
                 }
                 val output = extractedEncFile.openOutputStream() ?: run {
                     model.endJob("")
-                    return
+                    return true
                 }
 
                 try {
@@ -324,8 +339,8 @@ object Downloader {
                 }
 
             CryptUtils.decryptProgress(
-                extractedEncFile.openInputStream() ?: return,
-                decFile?.openOutputStream() ?: return,
+                extractedEncFile.openInputStream() ?: return false,
+                decFile?.openOutputStream() ?: return false,
                 key,
                 size,
             ) { current, max, bps ->
@@ -346,13 +361,14 @@ object Downloader {
                 extractedEncFile.delete()
             }
 
-            model.endJob(MR.strings.done())
+            onFinish(false, MR.strings.done())
+            true
         } catch (e: Throwable) {
+            e.printStackTrace()
             val message = if (e !is CancellationException) "${e.message}" else ""
-            model.endJob(message)
+            onFinish(e is KetchError.Http && e.code == 401, message)
+            false
         }
-
-        eventManager.sendEvent(Event.Download.Finish)
     }
 
     suspend fun onFetch(model: DownloadModel) {
