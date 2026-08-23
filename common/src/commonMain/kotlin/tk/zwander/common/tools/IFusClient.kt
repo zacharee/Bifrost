@@ -15,7 +15,6 @@ import io.ktor.client.request.url
 import io.ktor.client.statement.HttpResponse
 import io.ktor.client.statement.bodyAsChannel
 import io.ktor.http.HttpMethod
-import io.ktor.utils.io.InternalAPI
 import io.ktor.utils.io.readTo
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
@@ -23,7 +22,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.launch
-import kotlinx.io.InternalIoApi
 import tk.zwander.common.util.firstElementByTagName
 import tk.zwander.common.util.globalHttpClient
 import tk.zwander.common.util.ketch
@@ -52,7 +50,6 @@ interface IFusClient<Request : IFusClient.IRequest> {
      * @param fileName the name of the file to download.
      * @param start an optional offset. Used for resuming downloads.
      */
-    @OptIn(InternalAPI::class, InternalIoApi::class)
     suspend fun downloadFile(
         fileName: String,
         start: Long = 0,
