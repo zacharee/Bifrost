@@ -9,7 +9,7 @@ pluginManagement {
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
         maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/")
         maven("https://maven.hq.hydraulic.software")
-//        maven("file:libs/")
+        maven(File("${rootProject.projectDir.absolutePath}/libs/"))
     }
 }
 
@@ -27,7 +27,7 @@ dependencyResolutionManagement {
         maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/")
         maven("https://maven.pkg.jetbrains.space/public/p/ktor/eap/")
         maven("https://jitpack.io")
-//        maven("file:libs/")
+        maven(File("${rootProject.projectDir.absolutePath}/libs/"))
         maven("https://repo.jenkins-ci.org/public/")
     }
 }

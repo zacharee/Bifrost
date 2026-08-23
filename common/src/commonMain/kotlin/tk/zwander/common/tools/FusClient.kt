@@ -9,7 +9,6 @@ import com.linroid.ketch.api.DownloadState
 import com.linroid.ketch.api.KetchError
 import dev.zwander.kotlin.file.IPlatformFile
 import io.ktor.client.plugins.HttpTimeoutConfig
-import io.ktor.client.plugins.auth.clearAuthTokens
 import io.ktor.client.plugins.timeout
 import io.ktor.client.request.headers
 import io.ktor.client.request.prepareRequest
@@ -19,7 +18,6 @@ import io.ktor.client.request.url
 import io.ktor.client.statement.bodyAsText
 import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpMethod
-import io.ktor.utils.io.InternalAPI
 import io.ktor.utils.io.core.toByteArray
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
@@ -27,7 +25,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.launch
-import kotlinx.io.InternalIoApi
 import tk.zwander.common.util.BreadcrumbType
 import tk.zwander.common.util.BugsnagUtils
 import tk.zwander.common.util.globalHttpClient
@@ -211,24 +208,36 @@ object FusClient : IFusClient<FusClient.Request> {
             response.headers["Content-MD5"]
         }
 
-        val existingTask = try {
-            ketch.tasks.value.find { it.request.url == url }
-                ?.let { download ->
-                    download.resume(Destination(dest.getAbsolutePath()))
-                    download.takeIf {
-                        it.state.value !is DownloadState.Completed
-                    }
-                }
-        } catch (e: KetchError.Http) {
-            if (e.code == 401) {
-                ketch.tasks.value.findLast { it.request.url == url }?.remove()
-                null
-            } else {
-                throw e
-            }
-        }
+//        val existingTask = try {
+//            ketch.tasks.value.find { it.request.value.url == url }
+//                ?.let { download ->
+//                    download.updateHeaders(
+//                        mapOf(
+//                            "Authorization" to authV.also { println(it) },
+//                            "User-Agent" to "SMART 2.0",
+//                            "Cache-Control" to "no-cache",
+//                        ),
+//                    )
+//                    try {
+//                        download.resume(Destination(dest.getAbsolutePath()))
+//                        download.takeIf {
+//                            it.state.value !is DownloadState.Completed
+//                        }
+//                    } catch (e: KetchError.Unknown) {
+//                        download.remove()
+//                        null
+//                    }
+//                }
+//        } catch (e: KetchError.Http) {
+//            if (e.code == 401) {
+//                ketch.tasks.value.findLast { it.request.value.url == url }?.remove()
+//                null
+//            } else {
+//                throw e
+//            }
+//        }
 
-        val task = existingTask ?: ketch.download(
+        val task = ketch.download(
             DownloadRequest(
                 url = url,
                 destination = Destination(dest.getAbsolutePath()),

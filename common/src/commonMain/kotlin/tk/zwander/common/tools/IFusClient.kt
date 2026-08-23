@@ -64,13 +64,7 @@ interface IFusClient<Request : IFusClient.IRequest> {
         val url = FusClientLegacy.getDownloadUrl(fileName)
 
         return if (HostOS.current != HostOS.Android) {
-            val task = ketch.tasks.value.find { it.request.url == url }
-                ?.let { download ->
-                    download.resume(Destination(dest.getAbsolutePath()))
-                    download.takeIf {
-                        it.state.value !is DownloadState.Completed
-                    }
-                } ?: ketch.download(
+            val task = ketch.download(
                 DownloadRequest(
                     url = url,
                     destination = Destination(dest.getAbsolutePath()),
