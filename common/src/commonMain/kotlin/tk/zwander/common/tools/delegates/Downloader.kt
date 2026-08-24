@@ -1,6 +1,7 @@
 package tk.zwander.common.tools.delegates
 
 import com.linroid.ketch.api.KetchError
+import dev.zwander.kmp.platform.HostOS
 import io.ktor.utils.io.core.toByteArray
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
@@ -212,7 +213,7 @@ object Downloader {
                 }
             }
 
-            val md5 = if (extractedEncFile.getLength() < size) {
+            val md5 = if (HostOS.current != HostOS.Android || extractedEncFile.getLength() < size) {
                 IFusClient.downloadFile(
                     fileName = path + fileName,
                     start = encFile.getLength(),

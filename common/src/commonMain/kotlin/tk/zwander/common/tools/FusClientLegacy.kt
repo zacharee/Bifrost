@@ -212,4 +212,11 @@ object FusClientLegacy : IFusClient<FusClientLegacy.Request> {
 
         return body
     }
+
+    override suspend fun createHeaders(authV: String): Map<String, String> {
+        return mapOf(
+            "Authorization" to authV,
+            "User-Agent" to "Kiss2.0_FUS",
+        )
+    }
 }

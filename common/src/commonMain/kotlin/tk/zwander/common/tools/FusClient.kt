@@ -172,113 +172,11 @@ object FusClient : IFusClient<FusClient.Request> {
         return body
     }
 
-    /**
-     * Download a file from Samsung's server.
-     * @param fileName the name of the file to download.
-     * @param start an optional offset. Used for resuming downloads.
-     */
-    override suspend fun downloadFile(
-        fileName: String,
-        start: Long,
-        size: Long,
-        dest: IPlatformFile,
-        progressCallback: suspend (current: Long, max: Long, bps: Long) -> Unit,
-    ): String? {
-        val authV = getAuthV(cloud = true)
-        val url = getDownloadUrl(fileName)
-
-        val md5Request = globalHttpClient.prepareRequest {
-            method = HttpMethod.Get
-            url(url)
-            headers {
-                append("Authorization", authV)
-                append("User-Agent", "SMART 2.0")
-                if (start > 0) {
-                    append("Range", "bytes=${start}-")
-                }
-            }
-            timeout {
-                this.requestTimeoutMillis = HttpTimeoutConfig.INFINITE_TIMEOUT_MS
-                this.socketTimeoutMillis = HttpTimeoutConfig.INFINITE_TIMEOUT_MS
-                this.connectTimeoutMillis = HttpTimeoutConfig.INFINITE_TIMEOUT_MS
-            }
-        }
-
-        val md5 = md5Request.execute { response ->
-            response.headers["Content-MD5"]
-        }
-
-//        val existingTask = try {
-//            ketch.tasks.value.find { it.request.value.url == url }
-//                ?.let { download ->
-//                    download.updateHeaders(
-//                        mapOf(
-//                            "Authorization" to authV.also { println(it) },
-//                            "User-Agent" to "SMART 2.0",
-//                            "Cache-Control" to "no-cache",
-//                        ),
-//                    )
-//                    try {
-//                        download.resume(Destination(dest.getAbsolutePath()))
-//                        download.takeIf {
-//                            it.state.value !is DownloadState.Completed
-//                        }
-//                    } catch (e: KetchError.Unknown) {
-//                        download.remove()
-//                        null
-//                    }
-//                }
-//        } catch (e: KetchError.Http) {
-//            if (e.code == 401) {
-//                ketch.tasks.value.findLast { it.request.value.url == url }?.remove()
-//                null
-//            } else {
-//                throw e
-//            }
-//        }
-
-        val task = ketch.download(
-            DownloadRequest(
-                url = url,
-                destination = Destination(dest.getAbsolutePath()),
-                headers = mapOf(
-                    "Authorization" to authV.also { println(it) },
-                    "User-Agent" to "SMART 2.0",
-                    "Cache-Control" to "no-cache",
-                ),
-            ),
+    override suspend fun createHeaders(authV: String): Map<String, String> {
+        return mapOf(
+            "Authorization" to authV.also { println(it) },
+            "User-Agent" to "SMART 2.0",
+            "Cache-Control" to "no-cache",
         )
-
-        CoroutineScope(currentCoroutineContext()).launch(Dispatchers.IO) {
-            task.state.collect {
-                if (it is DownloadState.Downloading) {
-                    progressCallback(
-                        it.progress.downloadedBytes,
-                        size,
-                        it.progress.bytesPerSecond,
-                    )
-                }
-            }
-        }
-
-        try {
-            while (true) {
-                val result = task.await()
-
-                if (result.isSuccess) {
-                    break
-                }
-
-                (result.exceptionOrNull() as? KetchError)?.let { error ->
-                    if (!error.isRetryable) {
-                        throw error
-                    }
-                }
-            }
-        } catch (_: CancellationException) {
-            task.pause()
-        }
-
-        return md5
     }
 }

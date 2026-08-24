@@ -1,31 +1,16 @@
 package tk.zwander.common.tools
 
 import com.fleeksoft.ksoup.Ksoup
-import com.linroid.ketch.api.Destination
-import com.linroid.ketch.api.DownloadRequest
-import com.linroid.ketch.api.DownloadState
-import com.linroid.ketch.api.KetchError
-import dev.zwander.kmp.platform.HostOS
+import com.linroid.ketch.api.*
 import dev.zwander.kotlin.file.IPlatformFile
-import io.ktor.client.plugins.HttpTimeoutConfig
-import io.ktor.client.plugins.timeout
-import io.ktor.client.request.headers
-import io.ktor.client.request.prepareRequest
-import io.ktor.client.request.url
-import io.ktor.client.statement.HttpResponse
-import io.ktor.client.statement.bodyAsChannel
-import io.ktor.http.HttpMethod
-import io.ktor.utils.io.readTo
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.IO
-import kotlinx.coroutines.currentCoroutineContext
-import kotlinx.coroutines.launch
+import io.ktor.client.plugins.*
+import io.ktor.client.request.*
+import io.ktor.client.statement.*
+import io.ktor.http.*
+import kotlinx.coroutines.*
 import tk.zwander.common.util.firstElementByTagName
 import tk.zwander.common.util.globalHttpClient
 import tk.zwander.common.util.ketch
-import tk.zwander.common.util.trackOperationProgress
 
 interface IFusClient<Request : IFusClient.IRequest> {
     sealed interface IRequest
@@ -44,6 +29,62 @@ interface IFusClient<Request : IFusClient.IRequest> {
         signature: String? = null,
         includeNonce: Boolean = true,
     ): String
+    suspend fun createHeaders(authV: String): Map<String, String>
+
+    suspend fun createDownloadTask(
+        url: String,
+        fileName: String,
+        start: Long = 0,
+        size: Long,
+        dest: IPlatformFile,
+        headers: Map<String, String>,
+        progressCallback: suspend (current: Long, max: Long, bps: Long) -> Unit,
+    ): DownloadTask {
+        val existingTask = try {
+            ketch.tasks.value.find { it.request.value.url == url }
+                ?.let { download ->
+                    println(download.state.value)
+                    if (download.state.value !is DownloadState.Completed) {
+                        download.updateHeaders(headers)
+                        download.resume(Destination(dest.getAbsolutePath()))
+                        download
+                    } else {
+                        download.remove()
+                        null
+                    }
+                }
+        } catch (e: KetchError.Http) {
+            e.printStackTrace()
+            if (e.code == 401) {
+                ketch.tasks.value.findLast { it.request.value.url == url }?.remove()
+                null
+            } else {
+                throw e
+            }
+        }
+
+        val task = existingTask ?: ketch.download(
+            DownloadRequest(
+                url = url,
+                destination = Destination(dest.getAbsolutePath()),
+                headers = headers,
+            ),
+        )
+
+        CoroutineScope(currentCoroutineContext()).launch(Dispatchers.IO) {
+            task.state.collect {
+                if (it is DownloadState.Downloading) {
+                    progressCallback(
+                        it.progress.downloadedBytes,
+                        size,
+                        it.progress.bytesPerSecond,
+                    )
+                }
+            }
+        }
+
+        return task
+    }
 
     /**
      * Download a file from Samsung's server.
@@ -57,98 +98,67 @@ interface IFusClient<Request : IFusClient.IRequest> {
         dest: IPlatformFile,
         progressCallback: suspend (current: Long, max: Long, bps: Long) -> Unit,
     ): String? {
-        val authV = FusClientLegacy.getAuthV()
-        val url = FusClientLegacy.getDownloadUrl(fileName)
+        val authV = getAuthV()
+        val url = getDownloadUrl(fileName)
+        val headers = createHeaders(authV)
 
-        return if (HostOS.current != HostOS.Android) {
-            val task = ketch.download(
-                DownloadRequest(
-                    url = url,
-                    destination = Destination(dest.getAbsolutePath()),
-                    headers = mapOf(
-                        "Authorization" to authV,
-                        "User-Agent" to "Kiss2.0_FUS",
-                    ),
-                ),
-            )
-
-            CoroutineScope(currentCoroutineContext()).launch(Dispatchers.IO) {
-                task.state.collect {
-                    if (it is DownloadState.Downloading) {
-                        progressCallback(
-                            it.progress.downloadedBytes,
-                            size,
-                            it.progress.bytesPerSecond,
-                        )
-                    }
-                }
+        val md5Request = globalHttpClient.prepareRequest {
+            method = HttpMethod.Head
+            url(url)
+            headers {
+                append("Authorization", authV)
+                append("User-Agent", "SMART 2.0")
             }
-
-            try {
-                while (true) {
-                    val result = task.await()
-
-                    if (result.isSuccess) {
-                        break
-                    }
-
-                    (result.exceptionOrNull() as? KetchError)?.let { error ->
-                        if (!error.isRetryable) {
-                            break
-                        }
-                    }
-                }
-            } catch (_: CancellationException) {
-                task.pause()
-            }
-
-            null
-        } else {
-            val outputStream = dest.openOutputStream(true) ?: return null
-
-            val request = globalHttpClient.prepareRequest {
-                method = HttpMethod.Get
-                url(url)
-                headers {
-                    append("Authorization", authV)
-                    append("User-Agent", "Kiss2.0_FUS")
-                    if (start > 0) {
-                        append("Range", "bytes=${start}-")
-                    }
-                }
-                timeout {
-                    this.requestTimeoutMillis = HttpTimeoutConfig.INFINITE_TIMEOUT_MS
-                    this.socketTimeoutMillis = HttpTimeoutConfig.INFINITE_TIMEOUT_MS
-                    this.connectTimeoutMillis = HttpTimeoutConfig.INFINITE_TIMEOUT_MS
-                }
-            }
-
-            try {
-                request.execute { response ->
-                    val md5 = response.headers["Content-MD5"]
-                    val channel = response.bodyAsChannel()
-
-                    trackOperationProgress(
-                        size = size,
-                        progressCallback = progressCallback,
-                        operation = {
-                            channel.readTo(outputStream, 8192L)
-                        },
-                        progressOffset = start,
-                        condition = { !channel.isClosedForRead },
-                        throttle = false,
-                    )
-
-                    outputStream.flush()
-
-                    md5
-                }
-            } finally {
-                outputStream.flush()
-                outputStream.close()
+            timeout {
+                this.requestTimeoutMillis = HttpTimeoutConfig.INFINITE_TIMEOUT_MS
+                this.socketTimeoutMillis = HttpTimeoutConfig.INFINITE_TIMEOUT_MS
+                this.connectTimeoutMillis = HttpTimeoutConfig.INFINITE_TIMEOUT_MS
             }
         }
 
+        val md5 = md5Request.execute { response ->
+            response.headers["Content-MD5"]
+        }
+
+        var task = createDownloadTask(
+            url = url,
+            fileName = fileName,
+            start = start,
+            size = size,
+            dest = dest,
+            headers = headers,
+            progressCallback = progressCallback,
+        )
+
+        try {
+            while (true) {
+                val result = task.await()
+
+                if (result.isSuccess) {
+                    break
+                }
+
+                (result.exceptionOrNull() as? KetchError)?.let { error ->
+                    if (!error.isRetryable) {
+                        task.remove()
+                    }
+
+                    task = createDownloadTask(
+                        url = url,
+                        fileName = fileName,
+                        start = start,
+                        size = size,
+                        dest = dest,
+                        headers = headers,
+                        progressCallback = progressCallback,
+                    )
+                }
+            }
+        } catch (_: CancellationException) {
+            task.pause()
+        }
+
+        return md5
     }
 
     fun HttpResponse.is401(body: String): Boolean {
