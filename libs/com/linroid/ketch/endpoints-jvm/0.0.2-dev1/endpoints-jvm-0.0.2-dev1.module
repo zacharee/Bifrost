@@ -1,0 +1,130 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../endpoints/0.0.2-dev1/endpoints-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "endpoints",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "endpoints-jvm.jar",
+          "url": "endpoints-jvm-0.0.2-dev1.jar",
+          "size": 170895,
+          "sha512": "73c607119c555015a903c8c6b59831ecc8f2ef1bb7aaf68da0f506153ea8db656fe4b993d065340bfc0ebc1afcc97a86fb9bfe3a2d196ac6bf28ee26232ca2cc",
+          "sha256": "5088dd62ca421746145403d0bbdaf76932a1c1ddb4c382463c7ea630092ca19f",
+          "sha1": "9ea930c06f116ede3d9f08af45a9d9da0c32b5c6",
+          "md5": "2e1069da9578e770dc7dbb88d19db167"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-resources",
+          "version": {
+            "requires": "3.5.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "endpoints-jvm.jar",
+          "url": "endpoints-jvm-0.0.2-dev1.jar",
+          "size": 170895,
+          "sha512": "73c607119c555015a903c8c6b59831ecc8f2ef1bb7aaf68da0f506153ea8db656fe4b993d065340bfc0ebc1afcc97a86fb9bfe3a2d196ac6bf28ee26232ca2cc",
+          "sha256": "5088dd62ca421746145403d0bbdaf76932a1c1ddb4c382463c7ea630092ca19f",
+          "sha1": "9ea930c06f116ede3d9f08af45a9d9da0c32b5c6",
+          "md5": "2e1069da9578e770dc7dbb88d19db167"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "endpoints-jvm-sources.jar",
+          "url": "endpoints-jvm-0.0.2-dev1-sources.jar",
+          "size": 6253,
+          "sha512": "3b034b96f0f13197ece32a4b32c24a34a4bedf85733ba505e0cabf738417618d305094f7f31cbf59fdfdb5ea131e2c86ddcf31a91b805bf43608552af93d5010",
+          "sha256": "91c043a43f2cb589da48ddc100bcaeda60344df73e3cec2eba7a6c1412b8afae",
+          "sha1": "516fbf784c2456b39430cd7b9db2f0c6b0cc3ead",
+          "md5": "d6c2dcbc15221c0220714aae98da6ece"
+        }
+      ]
+    }
+  ]
+}

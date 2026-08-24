@@ -1,0 +1,151 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../core/0.0.2-dev1/core-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "core",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "core.aar",
+          "url": "core-android-0.0.2-dev1.aar",
+          "size": 336200,
+          "sha512": "7448f2309965cb2aca5978970949c0180c4df57f23b0b8e422b4b5ea4da9ce6b0f42dd5ec6e4f1957d6caa7db1dcd06d8af912714a92514979b16a4e53612ddd",
+          "sha256": "19fbc0dd75357b37b9c41389df25b7e95e5fbfd77e0e2adff81593168e24c982",
+          "sha1": "198547d23b5b7bb746e7d3d39286616b5a7b1dca",
+          "md5": "fe0ecf33ff0ae4d60de2befca91bd1a2"
+        }
+      ]
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "androidx.startup",
+          "module": "startup-runtime",
+          "version": {
+            "requires": "1.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-datetime",
+          "version": {
+            "requires": "0.7.1"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.16.4"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "core.aar",
+          "url": "core-android-0.0.2-dev1.aar",
+          "size": 336200,
+          "sha512": "7448f2309965cb2aca5978970949c0180c4df57f23b0b8e422b4b5ea4da9ce6b0f42dd5ec6e4f1957d6caa7db1dcd06d8af912714a92514979b16a4e53612ddd",
+          "sha256": "19fbc0dd75357b37b9c41389df25b7e95e5fbfd77e0e2adff81593168e24c982",
+          "sha1": "198547d23b5b7bb746e7d3d39286616b5a7b1dca",
+          "md5": "fe0ecf33ff0ae4d60de2befca91bd1a2"
+        }
+      ]
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "core-android-sources.jar",
+          "url": "core-android-0.0.2-dev1-sources.jar",
+          "size": 50934,
+          "sha512": "cda6d8322b29d4992d7a3651103edaaf6dad0e597b65a23bd8fd0011fd5eeb957694c5b9d8df2a41c2021763b8b3f28441db71fd773926e917d165739008efe9",
+          "sha256": "0508ceeae4191ee08f38223162dc71d1d6a49d3e7e6c351831205d9387e994d6",
+          "sha1": "711c6a054ad60b4554c694ef68405f791e2481a7",
+          "md5": "dc830fe9cb499fb77fbb9d0bd19cc052"
+        }
+      ]
+    }
+  ]
+}

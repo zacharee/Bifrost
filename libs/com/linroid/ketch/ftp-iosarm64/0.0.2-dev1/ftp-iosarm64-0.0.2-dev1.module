@@ -1,0 +1,158 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../ftp/0.0.2-dev1/ftp-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "ftp",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-network",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "ftp-iosArm64Main.klib",
+          "url": "ftp-iosarm64-0.0.2-dev1.klib",
+          "size": 66576,
+          "sha512": "de0f5529a10879a076da14f87657e051a898d394aa543b7a274ef9e0bde860b1a1057efce7171138a329fe96078ddebf3ad75ffa9a9bb934aebfca211cb86fe0",
+          "sha256": "d8bc52049f49dd2d3a79f9ddeb328771c81687532cf05dd0f857c335d5a06106",
+          "sha1": "4b97881ae2dfa79f3ff619502f7b877a243a17b1",
+          "md5": "f35792592f33284c5ec916436c441c6c"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "ftp-iosarm64-sources.jar",
+          "url": "ftp-iosarm64-0.0.2-dev1-sources.jar",
+          "size": 14095,
+          "sha512": "bd0335c5f9b5a467bceaf2b6630192efeac0439dec97fb7e016ec8ba953a59f39809a43be62b49aa2bc03d63a7f051527e0ddd6802b3f4bddc9ca240a9364189",
+          "sha256": "c0dea21de3d9f41e1480e4854d66c4354bb757f4a52658a856327b6c9d7d4a64",
+          "sha1": "c3b8632b559fd8a2c70dbe978be439aabf859348",
+          "md5": "86a049e8aafa90d517f95bcf79fbc063"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-network",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "ftp-iosarm64-metadata.jar",
+          "url": "ftp-iosarm64-0.0.2-dev1-metadata.jar",
+          "size": 2408,
+          "sha512": "d8d3ff9f018e5f3d6edb543bb36f517b97f58cdce258ceb8e3e12befcfcbf528f5f39d8f6bc3ccf751a27ac9dcf1927d48b581a2f316fb53e728c38fd6d1520c",
+          "sha256": "bc0ce7c54e5912a10859111128f10216bb3de88061562e23b045eb122801d86b",
+          "sha1": "def2cc7d71c1e8dc18e7392569d7829ba5e57d87",
+          "md5": "8efbe29811fa8ef5cf66f0479b4a5de8"
+        }
+      ]
+    }
+  ]
+}

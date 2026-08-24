@@ -1,0 +1,130 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../endpoints/0.0.2-dev1/endpoints-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "endpoints",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "endpoints-wasm-js.klib",
+          "url": "endpoints-wasm-js-0.0.2-dev1.klib",
+          "size": 81151,
+          "sha512": "c3934c05b50ae3f1f98d47c768d59eb34a8e6e0688cc861a6d397cebc682e3b135f2985cf0099e4d88f758b6b03cd52e1dd0d4a2623abcef434448e00e2b9c95",
+          "sha256": "c9692bec497bf0e09343ba2f3248bfb5c43a75e9fbb462781406d4863fe66b16",
+          "sha1": "754726a75434973e709a1d64d268ac892c3c550f",
+          "md5": "ba9d6f790544de597d550ca3b1c6e576"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-resources",
+          "version": {
+            "requires": "3.5.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "endpoints-wasm-js.klib",
+          "url": "endpoints-wasm-js-0.0.2-dev1.klib",
+          "size": 81151,
+          "sha512": "c3934c05b50ae3f1f98d47c768d59eb34a8e6e0688cc861a6d397cebc682e3b135f2985cf0099e4d88f758b6b03cd52e1dd0d4a2623abcef434448e00e2b9c95",
+          "sha256": "c9692bec497bf0e09343ba2f3248bfb5c43a75e9fbb462781406d4863fe66b16",
+          "sha1": "754726a75434973e709a1d64d268ac892c3c550f",
+          "md5": "ba9d6f790544de597d550ca3b1c6e576"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "files": [
+        {
+          "name": "endpoints-wasm-js-sources.jar",
+          "url": "endpoints-wasm-js-0.0.2-dev1-sources.jar",
+          "size": 6253,
+          "sha512": "3b034b96f0f13197ece32a4b32c24a34a4bedf85733ba505e0cabf738417618d305094f7f31cbf59fdfdb5ea131e2c86ddcf31a91b805bf43608552af93d5010",
+          "sha256": "91c043a43f2cb589da48ddc100bcaeda60344df73e3cec2eba7a6c1412b8afae",
+          "sha1": "516fbf784c2456b39430cd7b9db2f0c6b0cc3ead",
+          "md5": "d6c2dcbc15221c0220714aae98da6ece"
+        }
+      ]
+    }
+  ]
+}

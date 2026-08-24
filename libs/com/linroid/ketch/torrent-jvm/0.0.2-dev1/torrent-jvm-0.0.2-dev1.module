@@ -1,0 +1,158 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../torrent/0.0.2-dev1/torrent-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "torrent",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "torrent-jvm.jar",
+          "url": "torrent-jvm-0.0.2-dev1.jar",
+          "size": 118781,
+          "sha512": "8bd1cab990c2d206acea390a83669e78e04383049c9568cdc6b7253b950f92dc58deec3d3ae3829ca5c80d60dab7fb70a33e63e10acab9ef01e85815fb3b18d6",
+          "sha256": "023e6833f81df76a43aa02193782c0ec0e86ac32b01372b399b15ac9ef3f86e9",
+          "sha1": "952611ef101ee4bf5532f4c8fe76dc6b3826563c",
+          "md5": "4df6139465166ca52939770930906e94"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.libtorrent4j",
+          "module": "libtorrent4j",
+          "version": {
+            "requires": "2.1.0-39"
+          }
+        },
+        {
+          "group": "org.libtorrent4j",
+          "module": "libtorrent4j-macos",
+          "version": {
+            "requires": "2.1.0-39"
+          }
+        },
+        {
+          "group": "org.libtorrent4j",
+          "module": "libtorrent4j-linux",
+          "version": {
+            "requires": "2.1.0-39"
+          }
+        },
+        {
+          "group": "org.libtorrent4j",
+          "module": "libtorrent4j-windows",
+          "version": {
+            "requires": "2.1.0-39"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "torrent-jvm.jar",
+          "url": "torrent-jvm-0.0.2-dev1.jar",
+          "size": 118781,
+          "sha512": "8bd1cab990c2d206acea390a83669e78e04383049c9568cdc6b7253b950f92dc58deec3d3ae3829ca5c80d60dab7fb70a33e63e10acab9ef01e85815fb3b18d6",
+          "sha256": "023e6833f81df76a43aa02193782c0ec0e86ac32b01372b399b15ac9ef3f86e9",
+          "sha1": "952611ef101ee4bf5532f4c8fe76dc6b3826563c",
+          "md5": "4df6139465166ca52939770930906e94"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "torrent-jvm-sources.jar",
+          "url": "torrent-jvm-0.0.2-dev1-sources.jar",
+          "size": 21760,
+          "sha512": "393f6c937b094b3a8bad0c4d0e2f224ea784398425d510750d0e0fee60b14fd065379b43cff6a98d96a6da6b3077ea6f692c970549afc01cb17163bd369948f0",
+          "sha256": "b97437ad524aa87262aa86ff7e86d287fc796ff6a70e54db5a2da51452a36051",
+          "sha1": "475c79106bb7649339832d9bf20970ab8e04911c",
+          "md5": "1170c66e2d10b76f9cd8dcf6772a37d6"
+        }
+      ]
+    }
+  ]
+}

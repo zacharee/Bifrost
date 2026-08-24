@@ -1,0 +1,144 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../endpoints/0.0.2-dev1/endpoints-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "endpoints",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-resources",
+          "version": {
+            "requires": "3.5.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "endpoints-iosArm64Main.klib",
+          "url": "endpoints-iosarm64-0.0.2-dev1.klib",
+          "size": 83231,
+          "sha512": "2eec9deca0b8ad26d4d309bc8d5830cfce8f48ce8b3a421b2b38b6315a24c59b6486d0e3db34e2fa1974509f4a88e5f2928f554d49b0f0fbe88ad42fa92a5409",
+          "sha256": "dde4bfc1b1701bc422eb4bbb0cd925f73c10f0783e88ed0f549457c1d215b4b7",
+          "sha1": "461b779ff6ec1527c171d4396bca8cc519f22992",
+          "md5": "6d7ed7b2bed681161cc8b3488a8b8171"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "endpoints-iosarm64-sources.jar",
+          "url": "endpoints-iosarm64-0.0.2-dev1-sources.jar",
+          "size": 6253,
+          "sha512": "3b034b96f0f13197ece32a4b32c24a34a4bedf85733ba505e0cabf738417618d305094f7f31cbf59fdfdb5ea131e2c86ddcf31a91b805bf43608552af93d5010",
+          "sha256": "91c043a43f2cb589da48ddc100bcaeda60344df73e3cec2eba7a6c1412b8afae",
+          "sha1": "516fbf784c2456b39430cd7b9db2f0c6b0cc3ead",
+          "md5": "d6c2dcbc15221c0220714aae98da6ece"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-resources",
+          "version": {
+            "requires": "3.5.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "endpoints-iosarm64-metadata.jar",
+          "url": "endpoints-iosarm64-0.0.2-dev1-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

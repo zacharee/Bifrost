@@ -1,0 +1,130 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../ktor/0.0.2-dev1/ktor-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "ktor",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "ktor.aar",
+          "url": "ktor-android-0.0.2-dev1.aar",
+          "size": 18716,
+          "sha512": "b30a4de8fffcf91f8fb59bee9ecb562d2eb1870d0814951befe875943916fa55207631696fe5be06570d9766d4389c388cdea463abc048ef9556d0c107bed9a7",
+          "sha256": "89653793b20f1a0b38a0851ea8ed5f691dc3d55a13da298e68763eca9ff832d5",
+          "sha1": "058f8fd6f4ca7d2f15c70be17a10093dcf77be38",
+          "md5": "cfd3f56b6c4f3ce850fc2dca289bf9a0"
+        }
+      ]
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-okhttp",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-core",
+          "version": {
+            "requires": "3.5.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "ktor.aar",
+          "url": "ktor-android-0.0.2-dev1.aar",
+          "size": 18716,
+          "sha512": "b30a4de8fffcf91f8fb59bee9ecb562d2eb1870d0814951befe875943916fa55207631696fe5be06570d9766d4389c388cdea463abc048ef9556d0c107bed9a7",
+          "sha256": "89653793b20f1a0b38a0851ea8ed5f691dc3d55a13da298e68763eca9ff832d5",
+          "sha1": "058f8fd6f4ca7d2f15c70be17a10093dcf77be38",
+          "md5": "cfd3f56b6c4f3ce850fc2dca289bf9a0"
+        }
+      ]
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "ktor-android-sources.jar",
+          "url": "ktor-android-0.0.2-dev1-sources.jar",
+          "size": 3414,
+          "sha512": "7b64db8f7c48de2b70cb98b70be9c0c2738ca722fbdc83542e8a69d0669b589330db9e0b9713e109a5c04825d52d91661129df19e23b5b71c8e0a5c4d83000fc",
+          "sha256": "4a0e2faa6a73bf72d4eea9205c7fa48c23388e63e2e32581863ca6126e2bb63d",
+          "sha1": "e6519fe780719ac08f0c43ef9a2559b0efa8e186",
+          "md5": "ca642a10ffaa69ed44b02f955e29330d"
+        }
+      ]
+    }
+  ]
+}

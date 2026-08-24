@@ -1,0 +1,290 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.linroid.ketch",
+    "module": "ktor",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "metadataApiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-core",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-darwin",
+          "version": {
+            "requires": "3.5.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "ktor-metadata.jar",
+          "url": "ktor-0.0.2-dev1.jar",
+          "size": 2955,
+          "sha512": "69355f19237db35e3e76dcbce5a200c4bd75bd5cfe9938f4cfed852e3d931a04adeffdd37fbfe85c214ae8d9a4385f5f79445b375cdb0ef9132acc9a89d3c2c2",
+          "sha256": "28d7903d9d7df746437e3c848186783c18cdadbf5506bdef7a52a2f453bbeb3b",
+          "sha1": "5bbc093c5ece94f9ef0504568210e9d5f801ee41",
+          "md5": "09df52d2a736225def424c23c6a9c0a0"
+        }
+      ]
+    },
+    {
+      "name": "metadataSourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "files": [
+        {
+          "name": "ktor-kotlin-sources.jar",
+          "url": "ktor-0.0.2-dev1-sources.jar",
+          "size": 3414,
+          "sha512": "7b64db8f7c48de2b70cb98b70be9c0c2738ca722fbdc83542e8a69d0669b589330db9e0b9713e109a5c04825d52d91661129df19e23b5b71c8e0a5c4d83000fc",
+          "sha256": "4a0e2faa6a73bf72d4eea9205c7fa48c23388e63e2e32581863ca6126e2bb63d",
+          "sha1": "e6519fe780719ac08f0c43ef9a2559b0efa8e186",
+          "md5": "ca642a10ffaa69ed44b02f955e29330d"
+        }
+      ]
+    },
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../ktor-android/0.0.2-dev1/ktor-android-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "ktor-android",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../ktor-android/0.0.2-dev1/ktor-android-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "ktor-android",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../ktor-android/0.0.2-dev1/ktor-android-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "ktor-android",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../ktor-iosarm64/0.0.2-dev1/ktor-iosarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "ktor-iosarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../ktor-iosarm64/0.0.2-dev1/ktor-iosarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "ktor-iosarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../ktor-iosarm64/0.0.2-dev1/ktor-iosarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "ktor-iosarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../ktor-iossimulatorarm64/0.0.2-dev1/ktor-iossimulatorarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "ktor-iossimulatorarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../ktor-iossimulatorarm64/0.0.2-dev1/ktor-iossimulatorarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "ktor-iossimulatorarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../ktor-iossimulatorarm64/0.0.2-dev1/ktor-iossimulatorarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "ktor-iossimulatorarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../ktor-jvm/0.0.2-dev1/ktor-jvm-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "ktor-jvm",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../ktor-jvm/0.0.2-dev1/ktor-jvm-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "ktor-jvm",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../ktor-jvm/0.0.2-dev1/ktor-jvm-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "ktor-jvm",
+        "version": "0.0.2-dev1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../remote/0.0.2-dev1/remote-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "remote",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "com.linroid.ketch",
+          "module": "endpoints",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "remote.aar",
+          "url": "remote-android-0.0.2-dev1.aar",
+          "size": 69734,
+          "sha512": "bcabb8897d0a5fe07cf4399ec7af3fe7f39d2a6d8ebff214bcc0df88ff4c2a6eae1e7c7826894f05aca22061326c76884f8794d68452c6d0784cc474e21c335f",
+          "sha256": "cd62195b59098b7eef92c15dc2354089da6c97c537d6c7eda05c6b7b0c198fd8",
+          "sha1": "5ac875d2ce88d78d19557ab24de35e6785743f09",
+          "md5": "9e5593a046c3d1b4f7c8eb32269c7d04"
+        }
+      ]
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "com.linroid.ketch",
+          "module": "endpoints",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-okhttp",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-datetime",
+          "version": {
+            "requires": "0.7.1"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-core",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-content-negotiation",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-resources",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-serialization-kotlinx-json",
+          "version": {
+            "requires": "3.5.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "remote.aar",
+          "url": "remote-android-0.0.2-dev1.aar",
+          "size": 69734,
+          "sha512": "bcabb8897d0a5fe07cf4399ec7af3fe7f39d2a6d8ebff214bcc0df88ff4c2a6eae1e7c7826894f05aca22061326c76884f8794d68452c6d0784cc474e21c335f",
+          "sha256": "cd62195b59098b7eef92c15dc2354089da6c97c537d6c7eda05c6b7b0c198fd8",
+          "sha1": "5ac875d2ce88d78d19557ab24de35e6785743f09",
+          "md5": "9e5593a046c3d1b4f7c8eb32269c7d04"
+        }
+      ]
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "remote-android-sources.jar",
+          "url": "remote-android-0.0.2-dev1-sources.jar",
+          "size": 5470,
+          "sha512": "ea5530f5e5a0badbeb82990029a6a266a37c38d1741180098543171bc220498493d42fb5d32d71b466ee262d31bd085c7412ee6f6d92bcaff2575674c2a42c1c",
+          "sha256": "73c59a33187adca7c27a14b09bf791aa63c3f57b65fa61c88de6a71608a5b4eb",
+          "sha1": "89632bbac152439900327d4c251eed3dbb3eef72",
+          "md5": "09e7f3c39575d7ceb6d3f65de8d61330"
+        }
+      ]
+    }
+  ]
+}

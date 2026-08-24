@@ -1,0 +1,144 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../ftp/0.0.2-dev1/ftp-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "ftp",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "ftp-jvm.jar",
+          "url": "ftp-jvm-0.0.2-dev1.jar",
+          "size": 82118,
+          "sha512": "c08a884fa99fd40d44e0ab8f50fb48bd18f7abd6a96797d731ce23c954c01d9e4544206fcd88c0c833bd1f77f65bcae47ff61f4c2730c1730630417c7888b923",
+          "sha256": "262863c9dacfe92f2bd21980e1683bb990ef1cb6b21c1369679151871a3943e6",
+          "sha1": "12b6d77b2b4cacc72a025ccaaf175625658a42f0",
+          "md5": "63b45423698c334236220edc7baa41b3"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-network-tls",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-network",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "ftp-jvm.jar",
+          "url": "ftp-jvm-0.0.2-dev1.jar",
+          "size": 82118,
+          "sha512": "c08a884fa99fd40d44e0ab8f50fb48bd18f7abd6a96797d731ce23c954c01d9e4544206fcd88c0c833bd1f77f65bcae47ff61f4c2730c1730630417c7888b923",
+          "sha256": "262863c9dacfe92f2bd21980e1683bb990ef1cb6b21c1369679151871a3943e6",
+          "sha1": "12b6d77b2b4cacc72a025ccaaf175625658a42f0",
+          "md5": "63b45423698c334236220edc7baa41b3"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "ftp-jvm-sources.jar",
+          "url": "ftp-jvm-0.0.2-dev1-sources.jar",
+          "size": 14154,
+          "sha512": "aedc12321704fa873f2bdfdf10db76b41af2e16ea87c5a9628454bc90ec7642d32b0cba361655fdb637074edd8b5734db83648479e55db062c8d5db3ff6fb35c",
+          "sha256": "08c9f8123cd8f605cba0cd83d86887989933cbbbbd972457d6719f5bde20e188",
+          "sha1": "6badf617defe639e3ae2800b92152e13147a2c27",
+          "md5": "57294249ba4b3bd1a629faef80c17d77"
+        }
+      ]
+    }
+  ]
+}

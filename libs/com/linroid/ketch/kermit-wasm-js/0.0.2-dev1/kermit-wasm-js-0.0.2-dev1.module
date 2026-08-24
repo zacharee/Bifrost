@@ -1,0 +1,123 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kermit/0.0.2-dev1/kermit-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "kermit",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kermit-wasm-js.klib",
+          "url": "kermit-wasm-js-0.0.2-dev1.klib",
+          "size": 5504,
+          "sha512": "3089b38c0ae1b1bea18e9b3c3bd261501f2da7ff3a3f16f6001fce56631cf54462a04ce97f3d7402b39b6b683fd49856c432dbf210bc0dd66dab11c6fbf5acfd",
+          "sha256": "aa95b3bf65815ff740255fae74f7c60ee6864185c1177c4329bc86e025a7107b",
+          "sha1": "94564b29acff2a9dd5651ce9c603a77f25b5b3da",
+          "md5": "62c7f097b400dc173130737da63b1c2c"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "co.touchlab",
+          "module": "kermit",
+          "version": {
+            "requires": "2.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kermit-wasm-js.klib",
+          "url": "kermit-wasm-js-0.0.2-dev1.klib",
+          "size": 5504,
+          "sha512": "3089b38c0ae1b1bea18e9b3c3bd261501f2da7ff3a3f16f6001fce56631cf54462a04ce97f3d7402b39b6b683fd49856c432dbf210bc0dd66dab11c6fbf5acfd",
+          "sha256": "aa95b3bf65815ff740255fae74f7c60ee6864185c1177c4329bc86e025a7107b",
+          "sha1": "94564b29acff2a9dd5651ce9c603a77f25b5b3da",
+          "md5": "62c7f097b400dc173130737da63b1c2c"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "files": [
+        {
+          "name": "kermit-wasm-js-sources.jar",
+          "url": "kermit-wasm-js-0.0.2-dev1-sources.jar",
+          "size": 1641,
+          "sha512": "47857e2e910086d5f34c67480a88931c96b915b7fedb63745752240fa09fd6c62674ab51ec3456d938238ad84242ab639e80bd372b74ccd18bd241e21c6cfac5",
+          "sha256": "6ffccf89156db097847a1a1139c72ed36e9e2e2789668e5b668ce1232869aed9",
+          "sha1": "64ccf18071ed8fcf39121d9929f64df6405d1c27",
+          "md5": "6da6511d5a6135094fabe7ba15b88977"
+        }
+      ]
+    }
+  ]
+}

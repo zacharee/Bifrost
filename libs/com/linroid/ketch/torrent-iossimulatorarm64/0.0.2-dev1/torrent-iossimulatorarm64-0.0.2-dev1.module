@@ -1,0 +1,144 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../torrent/0.0.2-dev1/torrent-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "torrent",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "torrent-iosSimulatorArm64Main.klib",
+          "url": "torrent-iossimulatorarm64-0.0.2-dev1.klib",
+          "size": 81619,
+          "sha512": "4db3638ef12f59b034bd374f4aaeff4d23f1865dee71c178280aea72a9e335f299855da0984070b57a8b7ae0aa259cdb0918346f6d6b8054bee0dd4ee7976082",
+          "sha256": "cb6d4427de583486144f1805664856e1cc79455b976e2151e84efd5a9dc215a0",
+          "sha1": "4f5ce33361d8ffcc289c901807a41562342df3a6",
+          "md5": "6d09184b24a27a6d7163d3df93388087"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "torrent-iossimulatorarm64-sources.jar",
+          "url": "torrent-iossimulatorarm64-0.0.2-dev1-sources.jar",
+          "size": 15776,
+          "sha512": "dae5e897d90dbe788ee383fd0b6bbcd3fa01c1c25e5d4ad04b4420175a264f97eca65817c57412320c1357b896ddbc2c1ba605dddf081c65b9d29f8298595d4a",
+          "sha256": "f4fa932304ce58db22ffc9be8b9a29975d5588aea1481e4be472113ca95d04c5",
+          "sha1": "2faf2441be973770204959c11e3f925961e1ab6c",
+          "md5": "af6b3f1134e5035de124d8067a22571b"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "torrent-iossimulatorarm64-metadata.jar",
+          "url": "torrent-iossimulatorarm64-0.0.2-dev1-metadata.jar",
+          "size": 2837,
+          "sha512": "960427d4fe87eb135dc6e90a16802993306bac7aacc2baf7a84966a45acdba2a9852da14d7ed6379765805f520d9c95c943e2d16e3481b1ec8560fbce7e822ec",
+          "sha256": "591d003586d0bcc5beaeb7ebf41041d34ab91a74fcf6622f371d21ba573b2e31",
+          "sha1": "c8d4822c2ca3ad80d9aa5c73563f029ce1d28014",
+          "md5": "121fcae4b0305185f067b2583468757f"
+        }
+      ]
+    }
+  ]
+}

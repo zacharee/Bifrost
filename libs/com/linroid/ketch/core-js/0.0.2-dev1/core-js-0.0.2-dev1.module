@@ -1,0 +1,165 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../core/0.0.2-dev1/core-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "core",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "core-js.klib",
+          "url": "core-js-0.0.2-dev1.klib",
+          "size": 206524,
+          "sha512": "bfd3115994a247fe494fe2379118491eee6c24529fbe956be191fc7837374d0316847d4a95dedaa568ce0dc2d4b9763e203eb038aec499f6530f6a10c96ce3b3",
+          "sha256": "87c8457bbf684ce3740f56036b3179eff313b77ac3101737f709a1160c8a7a42",
+          "sha1": "097cc587fef9c520c0b1e48b8a5f0c6bc82c8a4c",
+          "md5": "740a270ff0658293a610c32d7ee8c68c"
+        }
+      ]
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio-nodefilesystem",
+          "version": {
+            "requires": "3.16.4"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-datetime",
+          "version": {
+            "requires": "0.7.1"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.16.4"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "core-js.klib",
+          "url": "core-js-0.0.2-dev1.klib",
+          "size": 206524,
+          "sha512": "bfd3115994a247fe494fe2379118491eee6c24529fbe956be191fc7837374d0316847d4a95dedaa568ce0dc2d4b9763e203eb038aec499f6530f6a10c96ce3b3",
+          "sha256": "87c8457bbf684ce3740f56036b3179eff313b77ac3101737f709a1160c8a7a42",
+          "sha1": "097cc587fef9c520c0b1e48b8a5f0c6bc82c8a4c",
+          "md5": "740a270ff0658293a610c32d7ee8c68c"
+        }
+      ]
+    },
+    {
+      "name": "jsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "files": [
+        {
+          "name": "core-js-sources.jar",
+          "url": "core-js-0.0.2-dev1-sources.jar",
+          "size": 47913,
+          "sha512": "cdfdbd75d0b47f998109614871b915ae75a67e9f3b8431b739e6a1c1eb619b066292ba87d76c3b368c9a133c20f457d78094430bd951ffcfb574391caf4939db",
+          "sha256": "49a08a12cbda8077b48d3539f62e59f6c15ef12e88cbb5f7a5a75f019805b663",
+          "sha1": "470edae26388a30efd34929a7a6f04bd80a038a3",
+          "md5": "918b98c62a2b8e6c08e79d2e4e6515b9"
+        }
+      ]
+    }
+  ]
+}

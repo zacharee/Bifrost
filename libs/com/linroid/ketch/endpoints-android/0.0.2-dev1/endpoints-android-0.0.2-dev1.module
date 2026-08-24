@@ -1,0 +1,130 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../endpoints/0.0.2-dev1/endpoints-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "endpoints",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "endpoints.aar",
+          "url": "endpoints-android-0.0.2-dev1.aar",
+          "size": 156273,
+          "sha512": "64da270e426bc91adc3f7c3f89d72861e683f7726caeb9f48b4d2e482909ec17ac98387ac54f84d577be10de0dfe7900d9fae75ebdf270f3d5362c9e7832611e",
+          "sha256": "6ffe5817d33b8be74835d7c36654ef0fc464906be21ac254638db5ced500b55a",
+          "sha1": "6c309dff4587d661cbc98d8fa316f2cafc1e90ae",
+          "md5": "536079fc7b247c01eabdacd9a53fdd44"
+        }
+      ]
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-resources",
+          "version": {
+            "requires": "3.5.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "endpoints.aar",
+          "url": "endpoints-android-0.0.2-dev1.aar",
+          "size": 156273,
+          "sha512": "64da270e426bc91adc3f7c3f89d72861e683f7726caeb9f48b4d2e482909ec17ac98387ac54f84d577be10de0dfe7900d9fae75ebdf270f3d5362c9e7832611e",
+          "sha256": "6ffe5817d33b8be74835d7c36654ef0fc464906be21ac254638db5ced500b55a",
+          "sha1": "6c309dff4587d661cbc98d8fa316f2cafc1e90ae",
+          "md5": "536079fc7b247c01eabdacd9a53fdd44"
+        }
+      ]
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "endpoints-android-sources.jar",
+          "url": "endpoints-android-0.0.2-dev1-sources.jar",
+          "size": 6253,
+          "sha512": "3b034b96f0f13197ece32a4b32c24a34a4bedf85733ba505e0cabf738417618d305094f7f31cbf59fdfdb5ea131e2c86ddcf31a91b805bf43608552af93d5010",
+          "sha256": "91c043a43f2cb589da48ddc100bcaeda60344df73e3cec2eba7a6c1412b8afae",
+          "sha1": "516fbf784c2456b39430cd7b9db2f0c6b0cc3ead",
+          "md5": "d6c2dcbc15221c0220714aae98da6ece"
+        }
+      ]
+    }
+  ]
+}

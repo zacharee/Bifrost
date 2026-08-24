@@ -1,0 +1,130 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kermit/0.0.2-dev1/kermit-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "kermit",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "co.touchlab",
+          "module": "kermit",
+          "version": {
+            "requires": "2.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kermit-iosArm64Main.klib",
+          "url": "kermit-iosarm64-0.0.2-dev1.klib",
+          "size": 6098,
+          "sha512": "09e9839c2bfb441ebe2eb14c5e6b8f48b636b9cb873c81532510114e1c4bb4a6246bb4297c653c43a0e09931b6235d1fe9cf1cc86bd71e34a8245184542c0517",
+          "sha256": "3e9951f70c862be74762afdb3db2731534d9c92e96e0b3cc0d4e192bc8117cdb",
+          "sha1": "3a69162c64109015dab8bf2a330dfcab4ce53ea6",
+          "md5": "c51a1b729c2791982f82a8d58485917d"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kermit-iosarm64-sources.jar",
+          "url": "kermit-iosarm64-0.0.2-dev1-sources.jar",
+          "size": 1641,
+          "sha512": "47857e2e910086d5f34c67480a88931c96b915b7fedb63745752240fa09fd6c62674ab51ec3456d938238ad84242ab639e80bd372b74ccd18bd241e21c6cfac5",
+          "sha256": "6ffccf89156db097847a1a1139c72ed36e9e2e2789668e5b668ce1232869aed9",
+          "sha1": "64ccf18071ed8fcf39121d9929f64df6405d1c27",
+          "md5": "6da6511d5a6135094fabe7ba15b88977"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "co.touchlab",
+          "module": "kermit",
+          "version": {
+            "requires": "2.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kermit-iosarm64-metadata.jar",
+          "url": "kermit-iosarm64-0.0.2-dev1-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

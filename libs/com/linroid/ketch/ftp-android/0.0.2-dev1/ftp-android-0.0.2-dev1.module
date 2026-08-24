@@ -1,0 +1,144 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../ftp/0.0.2-dev1/ftp-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "ftp",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "ftp.aar",
+          "url": "ftp-android-0.0.2-dev1.aar",
+          "size": 77801,
+          "sha512": "bb0b08e900c63ec23f62667d713903e3f01948e84ddecd2cd19dcd7f7af8ec6127adc9a9710504f50f32b8ca91ff2d227d75249c3652a3e7c085014cf4b37ff4",
+          "sha256": "5d635116925f53d74a88e3fff836fc369999d3e16d6d6f86629f4483e7932f0f",
+          "sha1": "ac7f2616f52982be81898a30dde5d8c38581a68c",
+          "md5": "4043dedb3f478d948187bb6b79239927"
+        }
+      ]
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-network-tls",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-network",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "ftp.aar",
+          "url": "ftp-android-0.0.2-dev1.aar",
+          "size": 77801,
+          "sha512": "bb0b08e900c63ec23f62667d713903e3f01948e84ddecd2cd19dcd7f7af8ec6127adc9a9710504f50f32b8ca91ff2d227d75249c3652a3e7c085014cf4b37ff4",
+          "sha256": "5d635116925f53d74a88e3fff836fc369999d3e16d6d6f86629f4483e7932f0f",
+          "sha1": "ac7f2616f52982be81898a30dde5d8c38581a68c",
+          "md5": "4043dedb3f478d948187bb6b79239927"
+        }
+      ]
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "ftp-android-sources.jar",
+          "url": "ftp-android-0.0.2-dev1-sources.jar",
+          "size": 14210,
+          "sha512": "eff3aed8650d15955ab811376ab62b7683ab51618b09487bd1057d8af46b2cbf122ab8b86e7cae7eb8323d1c2ce73df66f450b4a90f5132a257685383d47082a",
+          "sha256": "6c7d366e6b0b234d2b6359c724d0db50ea913117dd5cb63c356c90ff2086f002",
+          "sha1": "dbb81d991afd77b929ba7329efd28d4317a073b5",
+          "md5": "94978d122290838e20496c9fa78a5986"
+        }
+      ]
+    }
+  ]
+}

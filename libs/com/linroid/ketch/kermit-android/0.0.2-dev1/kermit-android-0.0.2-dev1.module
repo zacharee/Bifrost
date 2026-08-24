@@ -1,0 +1,123 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kermit/0.0.2-dev1/kermit-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "kermit",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kermit.aar",
+          "url": "kermit-android-0.0.2-dev1.aar",
+          "size": 3788,
+          "sha512": "fe74a2566f9481dfb9961e0f9ce5f68564791e9c21b2659245588efe1c180ceb271411742fc1587e5a8d8385ff1e7dfdd54dcde56c78ec8165d6d6d611386b0f",
+          "sha256": "cc8eb408a4b8d79d96a1156a931dcd845c00f837f1bc02568b4bd1f307fc15d0",
+          "sha1": "9737170b50df1e347f34edc44d818e058d5cc533",
+          "md5": "ec650cec529f3464217b102f2ff75d85"
+        }
+      ]
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "co.touchlab",
+          "module": "kermit",
+          "version": {
+            "requires": "2.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kermit.aar",
+          "url": "kermit-android-0.0.2-dev1.aar",
+          "size": 3788,
+          "sha512": "fe74a2566f9481dfb9961e0f9ce5f68564791e9c21b2659245588efe1c180ceb271411742fc1587e5a8d8385ff1e7dfdd54dcde56c78ec8165d6d6d611386b0f",
+          "sha256": "cc8eb408a4b8d79d96a1156a931dcd845c00f837f1bc02568b4bd1f307fc15d0",
+          "sha1": "9737170b50df1e347f34edc44d818e058d5cc533",
+          "md5": "ec650cec529f3464217b102f2ff75d85"
+        }
+      ]
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "kermit-android-sources.jar",
+          "url": "kermit-android-0.0.2-dev1-sources.jar",
+          "size": 1641,
+          "sha512": "47857e2e910086d5f34c67480a88931c96b915b7fedb63745752240fa09fd6c62674ab51ec3456d938238ad84242ab639e80bd372b74ccd18bd241e21c6cfac5",
+          "sha256": "6ffccf89156db097847a1a1139c72ed36e9e2e2789668e5b668ce1232869aed9",
+          "sha1": "64ccf18071ed8fcf39121d9929f64df6405d1c27",
+          "md5": "6da6511d5a6135094fabe7ba15b88977"
+        }
+      ]
+    }
+  ]
+}

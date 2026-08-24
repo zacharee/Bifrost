@@ -1,0 +1,186 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../remote/0.0.2-dev1/remote-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "remote",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "com.linroid.ketch",
+          "module": "endpoints",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "remote-wasm-js.klib",
+          "url": "remote-wasm-js-0.0.2-dev1.klib",
+          "size": 34422,
+          "sha512": "6e0cfbae97f6fd2338aa87dddb1354226101be401b25a9554966f95d1b9e4532c55343c9f94ea3773291672e94715cd49e4bfbea22aea63367e41a1c3789e524",
+          "sha256": "e90a7c0f2a34e3c74c7bad964bbc5e9878d1498a122c3e6da24956504bc7d814",
+          "sha1": "93ef8e00dc9fe558ff6914ecfdc82392c32a899f",
+          "md5": "ba708085a85212c4967423588cd90335"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "com.linroid.ketch",
+          "module": "endpoints",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-js",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-datetime",
+          "version": {
+            "requires": "0.7.1"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-core",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-content-negotiation",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-resources",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-serialization-kotlinx-json",
+          "version": {
+            "requires": "3.5.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "remote-wasm-js.klib",
+          "url": "remote-wasm-js-0.0.2-dev1.klib",
+          "size": 34422,
+          "sha512": "6e0cfbae97f6fd2338aa87dddb1354226101be401b25a9554966f95d1b9e4532c55343c9f94ea3773291672e94715cd49e4bfbea22aea63367e41a1c3789e524",
+          "sha256": "e90a7c0f2a34e3c74c7bad964bbc5e9878d1498a122c3e6da24956504bc7d814",
+          "sha1": "93ef8e00dc9fe558ff6914ecfdc82392c32a899f",
+          "md5": "ba708085a85212c4967423588cd90335"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "files": [
+        {
+          "name": "remote-wasm-js-sources.jar",
+          "url": "remote-wasm-js-0.0.2-dev1-sources.jar",
+          "size": 5470,
+          "sha512": "ea5530f5e5a0badbeb82990029a6a266a37c38d1741180098543171bc220498493d42fb5d32d71b466ee262d31bd085c7412ee6f6d92bcaff2575674c2a42c1c",
+          "sha256": "73c59a33187adca7c27a14b09bf791aa63c3f57b65fa61c88de6a71608a5b4eb",
+          "sha1": "89632bbac152439900327d4c251eed3dbb3eef72",
+          "md5": "09e7f3c39575d7ceb6d3f65de8d61330"
+        }
+      ]
+    }
+  ]
+}

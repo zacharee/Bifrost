@@ -1,0 +1,137 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kermit/0.0.2-dev1/kermit-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "kermit",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kermit-js.klib",
+          "url": "kermit-js-0.0.2-dev1.klib",
+          "size": 5482,
+          "sha512": "bd4ad6264e7c55e5596b5e964067e8c33f7c043cd6c8efafe3737b75bbd04d8f969418e6d86d5c3e1b6ca6a618a7775c6f55bdce68725b3d2f551b0fe618d17e",
+          "sha256": "1e8082e65417335f76e2110a0897fd973f4c9620b722752718cab004352059ca",
+          "sha1": "b5af1cdc3abc24987a8dfbc5972228b44fbe7280",
+          "md5": "0c34b73e702e443f8c47036aeefa73c8"
+        }
+      ]
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "co.touchlab",
+          "module": "kermit",
+          "version": {
+            "requires": "2.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kermit-js.klib",
+          "url": "kermit-js-0.0.2-dev1.klib",
+          "size": 5482,
+          "sha512": "bd4ad6264e7c55e5596b5e964067e8c33f7c043cd6c8efafe3737b75bbd04d8f969418e6d86d5c3e1b6ca6a618a7775c6f55bdce68725b3d2f551b0fe618d17e",
+          "sha256": "1e8082e65417335f76e2110a0897fd973f4c9620b722752718cab004352059ca",
+          "sha1": "b5af1cdc3abc24987a8dfbc5972228b44fbe7280",
+          "md5": "0c34b73e702e443f8c47036aeefa73c8"
+        }
+      ]
+    },
+    {
+      "name": "jsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "files": [
+        {
+          "name": "kermit-js-sources.jar",
+          "url": "kermit-js-0.0.2-dev1-sources.jar",
+          "size": 1641,
+          "sha512": "47857e2e910086d5f34c67480a88931c96b915b7fedb63745752240fa09fd6c62674ab51ec3456d938238ad84242ab639e80bd372b74ccd18bd241e21c6cfac5",
+          "sha256": "6ffccf89156db097847a1a1139c72ed36e9e2e2789668e5b668ce1232869aed9",
+          "sha1": "64ccf18071ed8fcf39121d9929f64df6405d1c27",
+          "md5": "6da6511d5a6135094fabe7ba15b88977"
+        }
+      ]
+    }
+  ]
+}

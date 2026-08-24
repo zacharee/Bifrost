@@ -1,0 +1,200 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../sqlite/0.0.2-dev1/sqlite-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "sqlite",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "app.cash.sqldelight",
+          "module": "runtime",
+          "version": {
+            "requires": "2.3.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "app.cash.sqldelight",
+          "module": "native-driver",
+          "version": {
+            "requires": "2.3.2"
+          }
+        },
+        {
+          "group": "app.cash.sqldelight",
+          "module": "runtime",
+          "version": {
+            "requires": "2.3.2"
+          }
+        },
+        {
+          "group": "app.cash.sqldelight",
+          "module": "coroutines-extensions",
+          "version": {
+            "requires": "2.3.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "sqlite-iosSimulatorArm64Main.klib",
+          "url": "sqlite-iossimulatorarm64-0.0.2-dev1.klib",
+          "size": 35583,
+          "sha512": "b8c0ebea5e11a72b41e52cee08e6e15b95d62888f3f19c019464d96c63fa986097f66aa948f6509ba1b8ae13bf6f4ea2982fa0ebc2583693badb1326f8e61eeb",
+          "sha256": "748b9115dd944860299ebcf613f1a5327554f38dd2bafcd1a34d1c0d618665a1",
+          "sha1": "0fb273209f104a89a92a04901abd6ebf50923df1",
+          "md5": "7eb867c14fff5ec99d75f3487d6355cb"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "sqlite-iossimulatorarm64-sources.jar",
+          "url": "sqlite-iossimulatorarm64-0.0.2-dev1-sources.jar",
+          "size": 7602,
+          "sha512": "7ada50df607f66bf4b421630eb8504a2b028fa1b1301c3774a18fad1bc4fb058e666e9e0f83bfc4e5494983c602071254da873c95f7d2b567173d78ddc786295",
+          "sha256": "acf2dd6fb7c7b4f67515de029cfaa4fefda135fb4ee7cc96d9843b0a00e85c3f",
+          "sha1": "1e05fb17812c8da7889ec4c7df14bd6d20cbe438",
+          "md5": "2d9f696edf66f0091adae14061b18c3c"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "app.cash.sqldelight",
+          "module": "runtime",
+          "version": {
+            "requires": "2.3.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "app.cash.sqldelight",
+          "module": "native-driver",
+          "version": {
+            "requires": "2.3.2"
+          }
+        },
+        {
+          "group": "app.cash.sqldelight",
+          "module": "runtime",
+          "version": {
+            "requires": "2.3.2"
+          }
+        },
+        {
+          "group": "app.cash.sqldelight",
+          "module": "coroutines-extensions",
+          "version": {
+            "requires": "2.3.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "sqlite-iossimulatorarm64-metadata.jar",
+          "url": "sqlite-iossimulatorarm64-0.0.2-dev1-metadata.jar",
+          "size": 2461,
+          "sha512": "fa31b9bdc4b5c6511268cd20a941a97cc846a437ecc18a2f8f4cc5aa0e63849b1070bedfaa62003d2d0f6c5fa7450597de725b69bc2d63e54a36e25a98da72a6",
+          "sha256": "99fa57945963bc288b2349fd17947aa1817dc85f8db00ede3f0da2d9ce087f7e",
+          "sha1": "f3f5f70444a636668548021218a6a54a2dd91c78",
+          "md5": "6f2c51bdf109a8ac638caeaa81f810e1"
+        }
+      ]
+    }
+  ]
+}

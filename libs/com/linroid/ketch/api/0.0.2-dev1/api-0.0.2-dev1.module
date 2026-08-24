@@ -1,0 +1,390 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.linroid.ketch",
+    "module": "api",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "metadataApiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-datetime",
+          "version": {
+            "requires": "0.7.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "api-metadata.jar",
+          "url": "api-0.0.2-dev1.jar",
+          "size": 22099,
+          "sha512": "92ad7f6f16355a3b4c08aef5306d40980e0d9a4ca74b338067d96092f2926df8c4e009a3d6d9b12fde7799a4512ec1ae411b6621302491c819d8d5640110dc25",
+          "sha256": "a72d66aa73c77cd498de1a4e0d485f47a5374174c083eae9c59193db296b4e18",
+          "sha1": "68eaa0af080d82c0d8ffaa1aca82b6ddf96ddf94",
+          "md5": "d973668dd058d737066e1403200ff1bc"
+        }
+      ]
+    },
+    {
+      "name": "metadataSourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "files": [
+        {
+          "name": "api-kotlin-sources.jar",
+          "url": "api-0.0.2-dev1-sources.jar",
+          "size": 21357,
+          "sha512": "13ca10ea5be69e4e1e6e6e7fb9197679b03e1b6b20c1e0077ae7a646570a7d4087b2dc2a68b654c0d920db7119280b89a05b7896dee8bf6c856bf7a1a403fc7f",
+          "sha256": "cc82ab99d9c957f92d31161e48963a10bb1b4bc00b16ecb360d1b3cf02e048ab",
+          "sha1": "d15574ae818a826804e5842ae1a134b8808cc720",
+          "md5": "4358d5ee95d902c1d6c6e5aeb830e341"
+        }
+      ]
+    },
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../api-android/0.0.2-dev1/api-android-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-android",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../api-android/0.0.2-dev1/api-android-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-android",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../api-android/0.0.2-dev1/api-android-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-android",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../api-iosarm64/0.0.2-dev1/api-iosarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-iosarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../api-iosarm64/0.0.2-dev1/api-iosarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-iosarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../api-iosarm64/0.0.2-dev1/api-iosarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-iosarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../api-iossimulatorarm64/0.0.2-dev1/api-iossimulatorarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-iossimulatorarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../api-iossimulatorarm64/0.0.2-dev1/api-iossimulatorarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-iossimulatorarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../api-iossimulatorarm64/0.0.2-dev1/api-iossimulatorarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-iossimulatorarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "available-at": {
+        "url": "../../api-js/0.0.2-dev1/api-js-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-js",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "available-at": {
+        "url": "../../api-js/0.0.2-dev1/api-js-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-js",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "jsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "available-at": {
+        "url": "../../api-js/0.0.2-dev1/api-js-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-js",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../api-jvm/0.0.2-dev1/api-jvm-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-jvm",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../api-jvm/0.0.2-dev1/api-jvm-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-jvm",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../api-jvm/0.0.2-dev1/api-jvm-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-jvm",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "available-at": {
+        "url": "../../api-wasm-js/0.0.2-dev1/api-wasm-js-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-wasm-js",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "available-at": {
+        "url": "../../api-wasm-js/0.0.2-dev1/api-wasm-js-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-wasm-js",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "available-at": {
+        "url": "../../api-wasm-js/0.0.2-dev1/api-wasm-js-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "api-wasm-js",
+        "version": "0.0.2-dev1"
+      }
+    }
+  ]
+}

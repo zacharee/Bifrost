@@ -1,0 +1,165 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../sqlite/0.0.2-dev1/sqlite-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "sqlite",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "app.cash.sqldelight",
+          "module": "runtime",
+          "version": {
+            "requires": "2.3.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "sqlite-jvm.jar",
+          "url": "sqlite-jvm-0.0.2-dev1.jar",
+          "size": 37207,
+          "sha512": "df63cb153ce46ff99094e500d8ae460a1f36e9d3b3b5191d56e5eb5bce6e4fe7b3b42fea7978b222dfeb5a4f51bd72ebffcec956000e9139b142f75087055ad2",
+          "sha256": "c1f6fd400cceeb755a84e4afbda42178bc6d887d4fa02772ea6b91776b53d133",
+          "sha1": "13073709a357940a128abe339bc426d9f9b5abae",
+          "md5": "ffa7650df45a32acaa0d93dc645260e6"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "app.cash.sqldelight",
+          "module": "runtime",
+          "version": {
+            "requires": "2.3.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "app.cash.sqldelight",
+          "module": "sqlite-driver",
+          "version": {
+            "requires": "2.3.2"
+          }
+        },
+        {
+          "group": "app.cash.sqldelight",
+          "module": "runtime",
+          "version": {
+            "requires": "2.3.2"
+          }
+        },
+        {
+          "group": "app.cash.sqldelight",
+          "module": "coroutines-extensions",
+          "version": {
+            "requires": "2.3.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "sqlite-jvm.jar",
+          "url": "sqlite-jvm-0.0.2-dev1.jar",
+          "size": 37207,
+          "sha512": "df63cb153ce46ff99094e500d8ae460a1f36e9d3b3b5191d56e5eb5bce6e4fe7b3b42fea7978b222dfeb5a4f51bd72ebffcec956000e9139b142f75087055ad2",
+          "sha256": "c1f6fd400cceeb755a84e4afbda42178bc6d887d4fa02772ea6b91776b53d133",
+          "sha1": "13073709a357940a128abe339bc426d9f9b5abae",
+          "md5": "ffa7650df45a32acaa0d93dc645260e6"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "sqlite-jvm-sources.jar",
+          "url": "sqlite-jvm-0.0.2-dev1-sources.jar",
+          "size": 8096,
+          "sha512": "4df498695370808f760066640f94b39652a3d3b1b2e04ba3167c3e916ea296171d13b5c6a0f08c102a13f296a85d2723c45d993cb430696bdd44b93524c4a3ec",
+          "sha256": "7a34d1f59f2465614c21e21788495bcf6f93db180c2233271135ac7353f453d1",
+          "sha1": "f2147956c4a42e900acbb6a3fcfd5d5cd970ffd1",
+          "md5": "ea53c643a9ab03bfd57cb4de235f398b"
+        }
+      ]
+    }
+  ]
+}

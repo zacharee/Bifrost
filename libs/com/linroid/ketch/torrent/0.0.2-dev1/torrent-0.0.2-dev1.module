@@ -1,0 +1,290 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.linroid.ketch",
+    "module": "torrent",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "metadataApiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "torrent-metadata.jar",
+          "url": "torrent-0.0.2-dev1.jar",
+          "size": 10634,
+          "sha512": "2daf93e5403e26415913e8058c2fb542a62d60f519d82664559602f2872a0f7dd3f92602caac29156c9bf4dacea01cb4d2083bc69c15386db75ebebf80d56b42",
+          "sha256": "9c8a4573246a8afa9c9f08add6a7b13ec43c917fa3e020e0d36e25a75a6e09ec",
+          "sha1": "6349685edd57680ca009040cb6d50f60915cd2c4",
+          "md5": "27699b37cf1d5baab8523fbbec98a25b"
+        }
+      ]
+    },
+    {
+      "name": "metadataSourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "files": [
+        {
+          "name": "torrent-kotlin-sources.jar",
+          "url": "torrent-0.0.2-dev1-sources.jar",
+          "size": 21321,
+          "sha512": "1973a6d60e837a914d5da19b2a6ed91c16f1b1c64343d88346f1d318afbd909ce05232e26a96b714c4fec0f8fd408b67e3aec36bcb8cd641205aa2f469ed0d74",
+          "sha256": "48d2dcded5903cee7885932753ea1693f5ec32dc107df3622fcfb5241f1d5f9b",
+          "sha1": "0eb7648623c6ad173a6911a6c641f2b204556971",
+          "md5": "e9e2875fddb4da2944fa659395726034"
+        }
+      ]
+    },
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../torrent-android/0.0.2-dev1/torrent-android-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "torrent-android",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../torrent-android/0.0.2-dev1/torrent-android-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "torrent-android",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../torrent-android/0.0.2-dev1/torrent-android-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "torrent-android",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../torrent-iosarm64/0.0.2-dev1/torrent-iosarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "torrent-iosarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../torrent-iosarm64/0.0.2-dev1/torrent-iosarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "torrent-iosarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../torrent-iosarm64/0.0.2-dev1/torrent-iosarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "torrent-iosarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../torrent-iossimulatorarm64/0.0.2-dev1/torrent-iossimulatorarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "torrent-iossimulatorarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../torrent-iossimulatorarm64/0.0.2-dev1/torrent-iossimulatorarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "torrent-iossimulatorarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../torrent-iossimulatorarm64/0.0.2-dev1/torrent-iossimulatorarm64-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "torrent-iossimulatorarm64",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../torrent-jvm/0.0.2-dev1/torrent-jvm-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "torrent-jvm",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../torrent-jvm/0.0.2-dev1/torrent-jvm-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "torrent-jvm",
+        "version": "0.0.2-dev1"
+      }
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../torrent-jvm/0.0.2-dev1/torrent-jvm-0.0.2-dev1.module",
+        "group": "com.linroid.ketch",
+        "module": "torrent-jvm",
+        "version": "0.0.2-dev1"
+      }
+    }
+  ]
+}

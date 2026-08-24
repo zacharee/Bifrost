@@ -1,0 +1,165 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../torrent/0.0.2-dev1/torrent-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "torrent",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "torrent.aar",
+          "url": "torrent-android-0.0.2-dev1.aar",
+          "size": 109398,
+          "sha512": "f7a8b0ae56fb3d953f9a5732ed0e358ee5a3f90c559bd65036d2c53f91174461e2f5b76af04ce0108767f24a514ebfa3db2a589ebb68fb0a0a483fe9950557dc",
+          "sha256": "3f695455f02072fd4605f6e9450d394c7d32038d940fa70398eb54e7a10840c6",
+          "sha1": "545f74097a4e7a35e21e4c6a4b9a5eea9698867d",
+          "md5": "d3707907d955aaf7ffdd4b21e5e635f2"
+        }
+      ]
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "core",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.libtorrent4j",
+          "module": "libtorrent4j",
+          "version": {
+            "requires": "2.1.0-39"
+          }
+        },
+        {
+          "group": "org.libtorrent4j",
+          "module": "libtorrent4j-android-arm64",
+          "version": {
+            "requires": "2.1.0-39"
+          }
+        },
+        {
+          "group": "org.libtorrent4j",
+          "module": "libtorrent4j-android-arm",
+          "version": {
+            "requires": "2.1.0-39"
+          }
+        },
+        {
+          "group": "org.libtorrent4j",
+          "module": "libtorrent4j-android-x86",
+          "version": {
+            "requires": "2.1.0-39"
+          }
+        },
+        {
+          "group": "org.libtorrent4j",
+          "module": "libtorrent4j-android-x86_64",
+          "version": {
+            "requires": "2.1.0-39"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "torrent.aar",
+          "url": "torrent-android-0.0.2-dev1.aar",
+          "size": 109398,
+          "sha512": "f7a8b0ae56fb3d953f9a5732ed0e358ee5a3f90c559bd65036d2c53f91174461e2f5b76af04ce0108767f24a514ebfa3db2a589ebb68fb0a0a483fe9950557dc",
+          "sha256": "3f695455f02072fd4605f6e9450d394c7d32038d940fa70398eb54e7a10840c6",
+          "sha1": "545f74097a4e7a35e21e4c6a4b9a5eea9698867d",
+          "md5": "d3707907d955aaf7ffdd4b21e5e635f2"
+        }
+      ]
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "torrent-android-sources.jar",
+          "url": "torrent-android-0.0.2-dev1-sources.jar",
+          "size": 20495,
+          "sha512": "038cf6c708a1eef50e91caaf4713a7094c411616eefaef52d3888d0c99dc1ace7dcec36103c625ec647be542e27763ef74fc9d6088af481a56b84c9bbc833d6c",
+          "sha256": "94276c209b8c7054109708ea2cf12fbf4036eb05314817b5b54d521b8d4efb2a",
+          "sha1": "65ca8a0a9d4a8bcafc926df8af9a73e2d80ac169",
+          "md5": "966a12502ec716d45956505d9c2b2172"
+        }
+      ]
+    }
+  ]
+}

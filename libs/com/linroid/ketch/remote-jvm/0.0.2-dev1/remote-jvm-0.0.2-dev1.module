@@ -1,0 +1,186 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../remote/0.0.2-dev1/remote-0.0.2-dev1.module",
+    "group": "com.linroid.ketch",
+    "module": "remote",
+    "version": "0.0.2-dev1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "com.linroid.ketch",
+          "module": "endpoints",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "remote-jvm.jar",
+          "url": "remote-jvm-0.0.2-dev1.jar",
+          "size": 73545,
+          "sha512": "fbe7eec4c24ee73b983a2d9322a80bb712ddc70e9f5c3116bc44051640e856ab6022e0487556c6a7508499a845a1abe9c4aafc8db98982d5e0642e3e2b2110b0",
+          "sha256": "83b9b589242a272b77ebaabdd855ffa15f07c51bd427493da2edaac062f50918",
+          "sha1": "d7c64234004b8e4e8c9150e4f75fe6132a9bdcf5",
+          "md5": "78cd52622616b191033d9ceb462d62d5"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.linroid.ketch",
+          "module": "api",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "com.linroid.ketch",
+          "module": "endpoints",
+          "version": {
+            "requires": "0.0.2-dev1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.21"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-cio",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-datetime",
+          "version": {
+            "requires": "0.7.1"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-core",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-content-negotiation",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-resources",
+          "version": {
+            "requires": "3.5.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-serialization-kotlinx-json",
+          "version": {
+            "requires": "3.5.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "remote-jvm.jar",
+          "url": "remote-jvm-0.0.2-dev1.jar",
+          "size": 73545,
+          "sha512": "fbe7eec4c24ee73b983a2d9322a80bb712ddc70e9f5c3116bc44051640e856ab6022e0487556c6a7508499a845a1abe9c4aafc8db98982d5e0642e3e2b2110b0",
+          "sha256": "83b9b589242a272b77ebaabdd855ffa15f07c51bd427493da2edaac062f50918",
+          "sha1": "d7c64234004b8e4e8c9150e4f75fe6132a9bdcf5",
+          "md5": "78cd52622616b191033d9ceb462d62d5"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "remote-jvm-sources.jar",
+          "url": "remote-jvm-0.0.2-dev1-sources.jar",
+          "size": 5470,
+          "sha512": "ea5530f5e5a0badbeb82990029a6a266a37c38d1741180098543171bc220498493d42fb5d32d71b466ee262d31bd085c7412ee6f6d92bcaff2575674c2a42c1c",
+          "sha256": "73c59a33187adca7c27a14b09bf791aa63c3f57b65fa61c88de6a71608a5b4eb",
+          "sha1": "89632bbac152439900327d4c251eed3dbb3eef72",
+          "md5": "09e7f3c39575d7ceb6d3f65de8d61330"
+        }
+      ]
+    }
+  ]
+}
