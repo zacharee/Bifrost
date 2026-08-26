@@ -3,7 +3,7 @@
 * Thank you [VanVuong41429](https://github.com/VanVuong41429) for contributing so many TACs!
 * Thank you [henr1kas](https://github.com/henr1kas) for the download method that doesn't require IMEIs!
 
-# Bifrost - Samsung Firmware Downloader
+# Bifrost – Samsung Firmware Downloader
 This is yet another firmware downloader for Samsung devices, but it has some special features.
 
 For one, it's cross-platform. Bifrost runs on Windows, Linux, macOS, and even Android! 
@@ -21,9 +21,15 @@ Enjoying the app? [Donate here](https://www.paypal.com/donate/?hosted_button_id=
 # Download
 For Windows, macOS, and Linux, you can download from https://bifrost.zwander.dev.
 
-Check the [Releases page](https://github.com/zacharee/SamloaderKotlin/releases) for binaries.
+For macOS and Linux, you can also install using [Homebrew](https://brew.sh/):
 
-If you want to run this on iOS or use the iOS version on macOS, you can sign up for the TestFlight version [here](https://testflight.apple.com/join/PVmWZNZn).
+```bash
+brew install --cask bifrost
+```
+
+Alternatively, check the [Releases page](https://github.com/zacharee/SamloaderKotlin/releases) for binaries.
+
+If you want to run this on iOS or use the iOS version on macOS, you can sign up for the TestFlight version [here](https://testflight.apple.com/join/PVmWZNZn). Note that this version may not receive the same frequency of updates as the rest.
 
 ## Platform Compatibility
 
