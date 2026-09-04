@@ -1,17 +1,17 @@
 [versions]
-android-gradle = "9.2.1"
+android-gradle = "9.4.0"
 androidx-activity-compose = "1.13.0"
 androidx-core = "1.19.0"
 androidx-documentfile = "1.1.0"
 androidx-performance-annotation = "1.0.0-alpha01"
 androidx-preference = "1.2.1"
 appdirs = "1.5.0"
-bugsnag-android = "6.26.1"
+bugsnag-android = "6.27.0"
 bugsnag-gradle = "1.2.0"
 bugsnag-jvm = "4.0.1"
 buildkonfig-gradle = "0.22.0"
-compose = "1.11.1"
-compose-constraintlayout = "0.8.0-shaded"
+compose = "1.12.0"
+compose-constraintlayout = "0.8.2"
 compose-material3 = "1.11.0-alpha07"
 compose-hot-reload = "1.2.0"
 composedialog = "0.2.1"
@@ -20,7 +20,7 @@ conveyor-control = "1.1"
 cryptography = "0.6.0"
 csv = "1.3"
 desugar_jdk_libs = "2.1.5"
-filekit = "0.14.2"
+filekit = "0.15.0"
 filepicker = "3e930dc088"
 flatlaf = "3.7.2"
 githubApi = "2.0-rc.7"
@@ -45,10 +45,10 @@ moko-resources = "0.26.4"
 multiplatform-settings = "1.3.0"
 nserrorKt = "0.2.0"
 nsexceptionKt = "1.0.11"
-oshi = "7.4.3"
-richeditorCompose = "1.0.0"
+oshi = "7.6.1"
+richeditorCompose = "1.2.0"
 semver = "3.1.0"
-slf4j = "2.0.18"
+slf4j = "2.0.19"
 vaqua = "13"
 windowStyler = "0686e0bef1"
 xmlbuilder = "0.2.0"
@@ -62,7 +62,7 @@ androidx-preference-ktx = { module = "androidx.preference:preference-ktx", versi
 appdirs = { module = "net.harawata:appdirs", version.ref = "appdirs" }
 bugsnag-android = { module = "com.bugsnag:bugsnag-android", version.ref = "bugsnag-android" }
 bugsnag-jvm = { module = "com.bugsnag:bugsnag", version.ref = "bugsnag-jvm" }
-compose-constraintlayout = { module = "tech.annexflow.compose:constraintlayout-compose-multiplatform", version.ref = "compose-constraintlayout" }
+compose-constraintlayout = { module = "tech.annexflow.compose:constraintlayout-compose-multiplatform-shaded", version.ref = "compose-constraintlayout" }
 compose-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "compose" }
 compose-linux-arm64 = { module = "org.jetbrains.compose.desktop:desktop-jvm-linux-arm64", version.ref = "compose" }
 compose-linux-x64 = { module = "org.jetbrains.compose.desktop:desktop-jvm-linux-x64", version.ref = "compose" }
