@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/SamloaderKotlin.android.main.iml" filepath="$PROJECT_DIR$/.idea/modules/android/SamloaderKotlin.android.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/SamloaderKotlin.iosApp.iml" filepath="$PROJECT_DIR$/.idea/SamloaderKotlin.iosApp.iml" />
     </modules>
   </component>
