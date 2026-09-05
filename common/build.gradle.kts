@@ -114,7 +114,7 @@ kotlin {
         version = versionCode.toString()
         summary = "Bifrost"
         homepage = "https://zwander.dev"
-        ios.deploymentTarget = "14.0"
+        ios.deploymentTarget = "15.0"
         osx.deploymentTarget = "10.13"
         podfile = project.file("../iosApp/Podfile")
         framework {
