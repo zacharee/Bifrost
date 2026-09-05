@@ -1,22 +1,11 @@
 package tk.zwander.common.tools
 
 import dev.zwander.kotlin.file.PlatformFile
-import kotlinx.cinterop.ExperimentalForeignApi
-import kotlinx.cinterop.UByteVarOf
-import kotlinx.cinterop.allocArray
-import kotlinx.cinterop.memScoped
-import kotlinx.cinterop.readBytes
+import kotlinx.cinterop.*
 import kotlinx.io.asSource
-import platform.Foundation.NSDocumentDirectory
-import platform.Foundation.NSFileManager
-import platform.Foundation.NSInputStream
-import platform.Foundation.NSNumber
-import platform.Foundation.NSStreamFileCurrentOffsetKey
-import platform.Foundation.NSURL
-import platform.Foundation.NSUserDomainMask
-import platform.Foundation.numberWithUnsignedLong
+import platform.Foundation.*
+import tk.zwander.common.generated.resources.Res
 import tk.zwander.common.util.RandomAccessStream
-import tk.zwander.samloaderkotlin.resources.MR
 
 @OptIn(ExperimentalForeignApi::class)
 actual object AuthParamsHandler {
@@ -29,36 +18,46 @@ actual object AuthParamsHandler {
         ),
         "auth_param.dat",
     )
-    val stream = NSInputStream(NSURL.fileURLWithPath(tempFile.getAbsolutePath()))
 
     actual suspend fun extractFile() {
         tempFile.delete()
         tempFile.createNewFile()
-        NSInputStream(MR.files.auth_param_dat.url).asSource().use { input ->
+        NSInputStream(NSURL.URLWithString(Res.getUri("files/auth_param.dat"))!!).asSource().use { input ->
             tempFile.openOutputStream(append = false, truncate = false)?.use { output ->
                 output.transferFrom(input)
             }
         }
+
+        println("TEMP FILE ${tempFile.getAbsolutePath()} ${tempFile.getLength()}")
     }
 
+    @OptIn(BetaInteropApi::class)
     actual suspend fun getAuthParamStream(): RandomAccessStream {
         return object : RandomAccessStream {
+            val stream = NSFileHandle.fileHandleForReadingAtPath(tempFile.getAbsolutePath())
+
             override fun get(pos: Long): UByte {
                 return get(pos, 1).first()
             }
 
             override fun get(pos: Long, len: Int): UByteArray {
-                stream.setProperty(
-                    NSNumber.numberWithUnsignedLong(pos.toULong()),
-                    NSStreamFileCurrentOffsetKey,
-                )
 
                 return memScoped {
-                    val buffer = allocArray<UByteVarOf<UByte>>(len)
+                    val error = alloc<ObjCObjectVar<NSError?>>()
+                    stream?.seekToOffset(pos.toULong(), error.ptr)
 
-                    stream.read(buffer, len.toULong())
+                    if (error.value != null) {
+                        throw IllegalStateException(error.value?.toString())
+                    }
 
-                    buffer.readBytes(len).toUByteArray()
+                    try {
+                        stream?.readDataUpToLength(len.toULong(), error.ptr)?.bytes?.readBytes(len)
+                            ?.toUByteArray() ?: ubyteArrayOf()
+                    } finally {
+                        if (error.value != null) {
+                            throw IllegalStateException(error.value?.toString())
+                        }
+                    }
                 }
             }
         }
