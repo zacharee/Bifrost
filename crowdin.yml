@@ -1,3 +1,3 @@
 files:
-  - source: /common/src/commonMain/i18n/tk/zwander/samloaderkotlin/strings_en.properties
-    translation: /common/src/commonMain/i18n/tk/zwander/samloaderkotlin/strings_%locale_with_underscore%.properties
+  - source: /common/src/commonMain/composeResources/values/strings.xml
+    translation: /common/src/commonMain/composeResources/values-%locale%/strings.xml
