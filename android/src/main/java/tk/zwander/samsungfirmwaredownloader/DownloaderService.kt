@@ -19,8 +19,13 @@ import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
 import androidx.core.app.ServiceCompat
 import androidx.core.content.ContextCompat
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 import tk.zwander.common.IDownloaderService
 import tk.zwander.common.R
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.*
 import tk.zwander.common.util.Event
 import tk.zwander.common.util.EventManager
 import tk.zwander.common.util.eventManager
@@ -33,7 +38,7 @@ import kotlin.time.ExperimentalTime
  * app running when it's in the background. It will run as long as the app is running.
  */
 @OptIn(ExperimentalTime::class)
-class DownloaderService : Service(), EventManager.EventListener {
+class DownloaderService : Service(), EventManager.EventListener, CoroutineScope by MainScope() {
     companion object {
         /**
          * Start the Service.
@@ -71,29 +76,31 @@ class DownloaderService : Service(), EventManager.EventListener {
         set(value) {
             field = value
 
-            if (value == 0) {
-                nm.cancel(100)
-                nm.notify(100, makeForegroundNotification(null))
-            }
+            launch {
+                if (value == 0) {
+                    nm.cancel(100)
+                    nm.notify(100, makeForegroundNotification(null))
+                }
 
-            if (value == 0 && !activityRunning) {
-                nm.notify(
-                    100,
-                    NotificationCompat.Builder(this, "notification")
-                        .setContentTitle(getString(R.string.notification_finished_channel_name))
-                        .setContentText(getString(R.string.notification_finished_channel_text))
-                        .setSmallIcon(R.mipmap.ic_launcher_foreground)
-                        .setContentIntent(
-                            PendingIntent.getActivity(
-                                this, 101,
-                                Intent(this, MainActivity::class.java),
-                                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_MUTABLE,
+                if (value == 0 && !activityRunning) {
+                    nm.notify(
+                        100,
+                        NotificationCompat.Builder(this@DownloaderService, "notification")
+                            .setContentTitle(org.jetbrains.compose.resources.getString(Res.string.notification_finished_channel_name))
+                            .setContentText(org.jetbrains.compose.resources.getString(Res.string.notification_finished_channel_text))
+                            .setSmallIcon(R.mipmap.ic_launcher_foreground)
+                            .setContentIntent(
+                                PendingIntent.getActivity(
+                                    this@DownloaderService, 101,
+                                    Intent(this@DownloaderService, MainActivity::class.java),
+                                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_MUTABLE,
+                                )
                             )
-                        )
-                        .build()
-                )
+                            .build()
+                    )
 
-                stopSelf()
+                    stopSelf()
+                }
             }
         }
     private var activityRunning = false
@@ -130,28 +137,30 @@ class DownloaderService : Service(), EventManager.EventListener {
         eventManager.addListener(this)
         application.registerActivityLifecycleCallbacks(lifecycleCallbacks)
 
-        //Create the notification channel if applicable.
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N_MR1) {
-            nm.createNotificationChannel(
-                NotificationChannel(
-                    "progress", getString(R.string.notification_progress_channel_name),
-                    NotificationManager.IMPORTANCE_LOW
+        launch {
+            //Create the notification channel if applicable.
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N_MR1) {
+                nm.createNotificationChannel(
+                    NotificationChannel(
+                        "progress", org.jetbrains.compose.resources.getString(Res.string.notification_progress_channel_name),
+                        NotificationManager.IMPORTANCE_LOW
+                    )
                 )
-            )
 
-            nm.createNotificationChannel(
-                NotificationChannel(
-                    "notification", getString(R.string.notification_finished_channel_text),
-                    NotificationManager.IMPORTANCE_DEFAULT
+                nm.createNotificationChannel(
+                    NotificationChannel(
+                        "notification", org.jetbrains.compose.resources.getString(Res.string.notification_finished_channel_text),
+                        NotificationManager.IMPORTANCE_DEFAULT
+                    )
                 )
-            )
+            }
+
+            //Create the foreground notification.
+            val foregroundNotification = makeForegroundNotification(null)
+
+            //Start in the foreground.
+            ServiceCompat.startForeground(this@DownloaderService, 100, foregroundNotification, ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
         }
-
-        //Create the foreground notification.
-        val foregroundNotification = makeForegroundNotification(null)
-
-        //Start in the foreground.
-        ServiceCompat.startForeground(this, 100, foregroundNotification, ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
     }
 
     override fun onDestroy() {
@@ -184,7 +193,7 @@ class DownloaderService : Service(), EventManager.EventListener {
 
     private var lastUpdate = 0L
 
-    private fun onProgress(status: String, current: Long, max: Long) {
+    private suspend fun onProgress(status: String, current: Long, max: Long) {
         val currentTime = System.currentTimeMillis()
 
         if (currentTime - lastUpdate > 500) {
@@ -201,11 +210,11 @@ class DownloaderService : Service(), EventManager.EventListener {
         runningJobs = max(0, runningJobs - 1)
     }
 
-    private fun makeForegroundNotification(progress: Triple<String, Long, Long>? = null): Notification {
+    private suspend fun makeForegroundNotification(progress: Triple<String, Long, Long>? = null): Notification {
         return NotificationCompat.Builder(this, "progress")
             .setContentTitle(getString(tk.zwander.samsungfirmwaredownloader.R.string.app_name))
             .setStyle(NotificationCompat.BigTextStyle())
-            .setContentText(getString(R.string.notification_progress_text))
+            .setContentText(org.jetbrains.compose.resources.getString(Res.string.notification_progress_text))
             .setContentIntent(
                 PendingIntent.getActivity(
                     this, 101,
