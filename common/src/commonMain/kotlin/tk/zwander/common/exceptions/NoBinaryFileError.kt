@@ -1,6 +1,8 @@
 package tk.zwander.common.exceptions
 
-import tk.zwander.common.util.invoke
-import tk.zwander.samloaderkotlin.resources.MR
+import kotlinx.coroutines.runBlocking
+import org.jetbrains.compose.resources.getString
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.noBinaryFile
 
-class NoBinaryFileError(model: String, region: String) : Exception(MR.strings.noBinaryFile(model, region))
+class NoBinaryFileError(model: String, region: String) : Exception(runBlocking { getString(Res.string.noBinaryFile, model, region) })

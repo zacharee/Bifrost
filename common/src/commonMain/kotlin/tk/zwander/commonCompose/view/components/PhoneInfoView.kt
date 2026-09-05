@@ -19,13 +19,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.compose.stringResource
 import io.ktor.http.URLBuilder
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.stringResource
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.*
 import tk.zwander.common.util.LocalPhoneInfo
 import tk.zwander.common.util.UrlHandler
 import tk.zwander.commonCompose.util.asClipEntry
-import tk.zwander.samloaderkotlin.resources.MR
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -47,7 +48,7 @@ fun PhoneInfoView(
     ) {
         ExpandButton(
             expanded = expanded,
-            text = stringResource(MR.strings.phoneInfo),
+            text = stringResource(Res.string.phoneInfo),
             onExpandChange = { expanded = it },
             modifier = Modifier.fillMaxWidth(),
         )
@@ -62,11 +63,11 @@ fun PhoneInfoView(
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     Text(
-                        text = stringResource(MR.strings.tacFormat, phoneInfo?.tac ?: ""),
+                        text = stringResource(Res.string.tacFormat, phoneInfo?.tac ?: ""),
                     )
 
                     Text(
-                        text = stringResource(MR.strings.modelFormat, phoneInfo?.model ?: ""),
+                        text = stringResource(Res.string.modelFormat, phoneInfo?.model ?: ""),
                     )
 
                     FlowRow(
@@ -89,7 +90,7 @@ fun PhoneInfoView(
                                 }
                             },
                         ) {
-                            Text(text = stringResource(MR.strings.copy))
+                            Text(text = stringResource(Res.string.copy))
                         }
 
                         Button(
@@ -107,7 +108,7 @@ fun PhoneInfoView(
                                 UrlHandler.launchUrl(urlBuilder.buildString(), true)
                             },
                         ) {
-                            Text(text = stringResource(MR.strings.fileIssue))
+                            Text(text = stringResource(Res.string.fileIssue))
                         }
                     }
                 }

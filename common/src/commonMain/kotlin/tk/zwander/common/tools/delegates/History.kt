@@ -4,6 +4,9 @@ import com.fleeksoft.ksoup.Ksoup
 import kotlinx.datetime.format.DateTimeComponents
 import kotlinx.datetime.format.char
 import tk.zwander.common.data.HistoryInfo
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.historyError
+import tk.zwander.common.generated.resources.historyErrorFormat
 import tk.zwander.common.tools.VersionFetch
 import tk.zwander.common.util.ChangelogHandler
 import tk.zwander.common.util.CrossPlatformBugsnag
@@ -11,7 +14,6 @@ import tk.zwander.common.util.firstElementByTagName
 import tk.zwander.common.util.getFirmwareHistoryStringFromSamsung
 import tk.zwander.common.util.invoke
 import tk.zwander.commonCompose.model.HistoryModel
-import tk.zwander.samloaderkotlin.resources.MR
 
 object History {
     private val dateFormat = DateTimeComponents.Format {
@@ -96,7 +98,7 @@ object History {
             val legacyHistory = getFirmwareHistoryStringFromSamsung(model.model.value, model.region.value)
 
             if (fullHistory.isEmpty() && legacyHistory == null) {
-                model.endJob(MR.strings.historyError())
+                model.endJob(Res.string.historyError())
             } else {
                 try {
                     val parsed = when {
@@ -126,7 +128,7 @@ object History {
                         }
 
                         else -> {
-                            model.endJob(MR.strings.historyError())
+                            model.endJob(Res.string.historyError())
                             return
                         }
                     }
@@ -145,13 +147,13 @@ object History {
                     model.endJob("")
                 } catch (e: Exception) {
                     e.printStackTrace()
-                    model.endJob(MR.strings.historyErrorFormat(e.message.toString()))
+                    model.endJob(Res.string.historyErrorFormat(e.message.toString()))
                 }
             }
         } catch (e: Throwable) {
             CrossPlatformBugsnag.notify(e)
 
-            model.endJob("${MR.strings.historyError()}${e.message?.let { "\n\n$it" }}")
+            model.endJob("${Res.string.historyError()}${e.message?.let { "\n\n$it" }}")
         }
     }
 }

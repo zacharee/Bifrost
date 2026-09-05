@@ -26,10 +26,14 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.compose.painterResource
-import dev.icerock.moko.resources.compose.stringResource
 import kotlinx.coroutines.launch
 import my.nanihadesuka.compose.LazyVerticalStaggeredGridScrollbar
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.cancel
+import tk.zwander.common.generated.resources.checkHistory
+import tk.zwander.common.generated.resources.refresh
 import tk.zwander.common.tools.delegates.History
 import tk.zwander.commonCompose.locals.LocalDecryptModel
 import tk.zwander.commonCompose.locals.LocalDownloadModel
@@ -42,7 +46,6 @@ import tk.zwander.commonCompose.view.components.HistoryItem
 import tk.zwander.commonCompose.view.components.HybridButton
 import tk.zwander.commonCompose.view.components.MRFLayout
 import tk.zwander.commonCompose.view.components.Page
-import tk.zwander.samloaderkotlin.resources.MR
 
 /**
  * The History View.
@@ -108,9 +111,9 @@ internal fun HistoryView() {
                                     }
                                 },
                                 enabled = canCheckHistory,
-                                text = stringResource(MR.strings.checkHistory),
-                                description = stringResource(MR.strings.checkHistory),
-                                vectorIcon = painterResource(MR.images.refresh),
+                                text = stringResource(Res.string.checkHistory),
+                                description = stringResource(Res.string.checkHistory),
+                                vectorIcon = painterResource(Res.drawable.refresh),
                                 parentSize = constraints.maxWidth
                             )
 
@@ -121,9 +124,9 @@ internal fun HistoryView() {
                                     model.endJob("")
                                 },
                                 enabled = hasRunningJobs,
-                                text = stringResource(MR.strings.cancel),
-                                description = stringResource(MR.strings.cancel),
-                                vectorIcon = painterResource(MR.images.cancel),
+                                text = stringResource(Res.string.cancel),
+                                description = stringResource(Res.string.cancel),
+                                vectorIcon = painterResource(Res.drawable.cancel),
                                 parentSize = constraints.maxWidth
                             )
                         }

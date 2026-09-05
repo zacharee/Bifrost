@@ -17,9 +17,14 @@ import androidx.compose.ui.text.withLink
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import org.jetbrains.compose.resources.stringResource
 import tk.zwander.common.GradleConfig
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.basedOn
+import tk.zwander.common.generated.resources.samloader
+import tk.zwander.common.generated.resources.version
+import tk.zwander.common.generated.resources.zacharyWander
 import tk.zwander.common.util.invoke
-import tk.zwander.samloaderkotlin.resources.MR
 
 @Composable
 fun AboutInfo(
@@ -36,7 +41,7 @@ fun AboutInfo(
                     fontSize = 16.sp,
                 ),
             ) {
-                append(MR.strings.version("${GradleConfig.versionName} © "))
+                append(stringResource(Res.string.version, "${GradleConfig.versionName} © "))
 
                 withStyle(
                     SpanStyle(
@@ -45,7 +50,7 @@ fun AboutInfo(
                     ),
                 ) {
                     withLink(LinkAnnotation.Url("https://zwander.dev")) {
-                        append(MR.strings.zacharyWander())
+                        append(stringResource(Res.string.zacharyWander))
                     }
                 }
             }
@@ -58,7 +63,7 @@ fun AboutInfo(
                     fontSize = 16.sp,
                 ),
             ) {
-                append(MR.strings.basedOn())
+                append(stringResource(Res.string.basedOn))
                 append(" ")
                 withLink(LinkAnnotation.Url("https://github.com/nlscc/samloader")) {
                     withStyle(
@@ -67,7 +72,7 @@ fun AboutInfo(
                             textDecoration = TextDecoration.Underline,
                         ),
                     ) {
-                        append(MR.strings.samloader())
+                        append(stringResource(Res.string.samloader))
                     }
                 }
             }

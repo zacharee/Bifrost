@@ -22,16 +22,24 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.icerock.moko.resources.compose.painterResource
-import dev.icerock.moko.resources.compose.stringResource
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.format.Padding
 import kotlinx.datetime.format.char
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import tk.zwander.common.data.HistoryInfo
 import tk.zwander.common.data.changelog.Changelog
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.android
+import tk.zwander.common.generated.resources.buildDate
+import tk.zwander.common.generated.resources.changelog
+import tk.zwander.common.generated.resources.decrypt
+import tk.zwander.common.generated.resources.download
+import tk.zwander.common.generated.resources.firmware
+import tk.zwander.common.generated.resources.lock_open_outline
+import tk.zwander.common.generated.resources.unknown
 import tk.zwander.commonCompose.util.OffsetCorrectedIdentityTransformation
 import tk.zwander.commonCompose.util.monthNames
-import tk.zwander.samloaderkotlin.resources.MR
 
 /**
  * An item in the firmware history list.
@@ -62,9 +70,9 @@ internal fun HistoryItem(
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(
-                        text = "${index + 1}. ${stringResource(MR.strings.android, info.androidVersion 
+                        text = "${index + 1}. ${stringResource(Res.string.android, info.androidVersion 
                             ?: changelog?.androidVer?.let { Regex("[0-9]+").find(it)?.value } 
-                            ?: stringResource(MR.strings.unknown))}",
+                            ?: stringResource(Res.string.unknown))}",
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.align(Alignment.CenterVertically),
                         fontSize = 20.sp,
@@ -81,8 +89,8 @@ internal fun HistoryItem(
                             .size(32.dp)
                     ) {
                         Icon(
-                            painterResource(MR.images.download),
-                            stringResource(MR.strings.download),
+                            painterResource(Res.drawable.download),
+                            stringResource(Res.string.download),
                             Modifier.size(24.dp)
                         )
                     }
@@ -97,8 +105,8 @@ internal fun HistoryItem(
                             .size(32.dp)
                     ) {
                         Icon(
-                            painterResource(MR.images.lock_open_outline),
-                            stringResource(MR.strings.decrypt),
+                            painterResource(Res.drawable.lock_open_outline),
+                            stringResource(Res.string.decrypt),
                             Modifier.size(24.dp)
                         )
                     }
@@ -109,7 +117,7 @@ internal fun HistoryItem(
                 ) {
                     Text(
                         text = stringResource(
-                            MR.strings.buildDate,
+                            Res.string.buildDate,
                             info.date?.let {
                                 val monthNames = monthNames()
                                 LocalDate.Format {
@@ -120,7 +128,7 @@ internal fun HistoryItem(
                                     char(' ')
                                     year()
                                 }.format(it)
-                            } ?: stringResource(MR.strings.unknown),
+                            } ?: stringResource(Res.string.unknown),
                         ),
                         modifier = Modifier.align(Alignment.Bottom),
                         fontSize = 16.sp,
@@ -139,7 +147,7 @@ internal fun HistoryItem(
                         readOnly = true,
                         modifier = Modifier.weight(1f)
                             .align(Alignment.CenterVertically),
-                        label = { Text(stringResource(MR.strings.firmware)) },
+                        label = { Text(stringResource(Res.string.firmware)) },
                         singleLine = true,
                         visualTransformation = OffsetCorrectedIdentityTransformation(info.firmwareString),
                     )
@@ -156,7 +164,7 @@ internal fun HistoryItem(
                         Column {
                             ExpandButton(
                                 changelogExpanded,
-                                stringResource(MR.strings.changelog),
+                                stringResource(Res.string.changelog),
                                 modifier = Modifier.fillMaxWidth(),
                             ) { onChangelogExpanded(it) }
 

@@ -27,7 +27,6 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform.android.library) apply false
     alias(libs.plugins.kotlin.native.cocoapods) apply false
     alias(libs.plugins.kotlin.serialization) apply false
-    alias(libs.plugins.moko.resources) apply false
     alias(libs.plugins.compose.hot.reload) apply false
 }
 

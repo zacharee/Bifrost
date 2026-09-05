@@ -15,6 +15,13 @@ import tk.zwander.common.data.exception.VersionException
 import tk.zwander.common.data.exception.VersionMismatchException
 import tk.zwander.common.exceptions.DownloadError
 import tk.zwander.common.exceptions.NoBinaryFileError
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.badReturnStatus
+import tk.zwander.common.generated.resources.error
+import tk.zwander.common.generated.resources.invalidFirmwareError
+import tk.zwander.common.generated.resources.invalid_imei_or_serial
+import tk.zwander.common.generated.resources.versionCheckError
+import tk.zwander.common.generated.resources.versionMismatch
 import tk.zwander.common.util.CrossPlatformBugsnag
 import tk.zwander.common.util.dataNode
 import tk.zwander.common.util.firstDataElementDataByTagName
@@ -22,7 +29,6 @@ import tk.zwander.common.util.firstElementByTagName
 import tk.zwander.common.util.invoke
 import tk.zwander.common.util.isAccessoryModel
 import tk.zwander.common.util.textNode
-import tk.zwander.samloaderkotlin.resources.MR
 import kotlin.time.Duration.Companion.milliseconds
 
 /**
@@ -269,7 +275,7 @@ object Request {
             onVersionException(error, info)
             return null
         } else if (error != null) {
-            onErrorFinish("${error.message ?: MR.strings.error()}\n\n${output}")
+            onErrorFinish("${error.message ?: Res.string.error()}\n\n${output}")
             if (result.isReportableCode() &&
                 !output.contains("Incapsula") &&
                 error !is CancellationException &&
@@ -328,7 +334,7 @@ object Request {
 
             if (status == "F01") {
                 return FetchResult.GetBinaryFileResult(
-                    error = Exception(MR.strings.invalidFirmwareError()),
+                    error = Exception(Res.string.invalidFirmwareError()),
                     rawOutput = responseXml.toString(),
                     requestBody = request,
                     responseCode = status,
@@ -337,7 +343,7 @@ object Request {
 
             if (status == "408") {
                 return FetchResult.GetBinaryFileResult(
-                    error = Exception(MR.strings.invalid_imei_or_serial()),
+                    error = Exception(Res.string.invalid_imei_or_serial()),
                     rawOutput = responseXml.toString(),
                     requestBody = request,
                     responseCode = status,
@@ -346,7 +352,7 @@ object Request {
 
             if (status != "200" && status != "S00") {
                 return FetchResult.GetBinaryFileResult(
-                    error = Exception(MR.strings.badReturnStatus(status.toString())),
+                    error = Exception(Res.string.badReturnStatus(status.toString())),
                     rawOutput = responseXml.toString(),
                     requestBody = request,
                     responseCode = status,
@@ -469,7 +475,7 @@ object Request {
             if (dataFile.isNullOrBlank()) {
                 return FetchResult.GetBinaryFileResult(
                     info = generateInfo(),
-                    error = VersionCheckException(MR.strings.versionCheckError()),
+                    error = VersionCheckException(Res.string.versionCheckError()),
                     requestBody = request,
                     responseCode = status,
                 )
@@ -540,7 +546,7 @@ object Request {
                 ) {
                     return FetchResult.GetBinaryFileResult(
                         info = generateInfo(),
-                        error = VersionMismatchException(MR.strings.versionMismatch(fw, served)),
+                        error = VersionMismatchException(Res.string.versionMismatch(fw, served)),
                         requestBody = request,
                         responseCode = status,
                     )

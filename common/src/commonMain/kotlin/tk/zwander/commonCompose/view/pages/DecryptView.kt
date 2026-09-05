@@ -28,13 +28,15 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.compose.painterResource
-import dev.icerock.moko.resources.compose.stringResource
 import dev.zwander.compose.alertdialog.InWindowAlertDialog
 import dev.zwander.kotlin.file.PlatformFile
 import kotlinx.coroutines.launch
 import my.nanihadesuka.compose.ColumnScrollbar
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import tk.zwander.common.data.DecryptFileInfo
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.*
 import tk.zwander.common.tools.delegates.Decrypter
 import tk.zwander.common.util.Event
 import tk.zwander.common.util.eventManager
@@ -48,7 +50,6 @@ import tk.zwander.commonCompose.view.components.HybridButton
 import tk.zwander.commonCompose.view.components.MRFLayout
 import tk.zwander.commonCompose.view.components.ProgressInfo
 import tk.zwander.commonCompose.view.components.SplitComponent
-import tk.zwander.samloaderkotlin.resources.MR
 import kotlin.time.ExperimentalTime
 
 /**
@@ -102,9 +103,9 @@ internal fun DecryptView() {
                             }
                         },
                         enabled = canDecrypt,
-                        text = stringResource(MR.strings.decrypt),
-                        description = stringResource(MR.strings.decryptFirmware),
-                        vectorIcon = painterResource(MR.images.lock_open_outline),
+                        text = stringResource(Res.string.decrypt),
+                        description = stringResource(Res.string.decryptFirmware),
+                        vectorIcon = painterResource(Res.drawable.lock_open_outline),
                         parentSize = constraints.maxWidth
                     )
                     Spacer(Modifier.width(8.dp))
@@ -115,9 +116,9 @@ internal fun DecryptView() {
                             }
                         },
                         enabled = canChangeOption,
-                        text = stringResource(MR.strings.openFile),
-                        description = stringResource(MR.strings.openFileDesc),
-                        vectorIcon = painterResource(MR.images.open_in_new),
+                        text = stringResource(Res.string.openFile),
+                        description = stringResource(Res.string.openFileDesc),
+                        vectorIcon = painterResource(Res.drawable.open_in_new),
                         parentSize = constraints.maxWidth
                     )
                     Spacer(Modifier.weight(1f))
@@ -129,9 +130,9 @@ internal fun DecryptView() {
                             model.endJob("")
                         },
                         enabled = hasRunningJobs,
-                        text = stringResource(MR.strings.cancel),
-                        description = stringResource(MR.strings.cancel),
-                        vectorIcon = painterResource(MR.images.cancel),
+                        text = stringResource(Res.string.cancel),
+                        description = stringResource(Res.string.cancel),
+                        vectorIcon = painterResource(Res.drawable.cancel),
                         parentSize = constraints.maxWidth
                     )
                 }
@@ -145,7 +146,7 @@ internal fun DecryptView() {
                     OutlinedTextField(
                         value = value,
                         onValueChange = {},
-                        label = { Text(text = stringResource(MR.strings.file)) },
+                        label = { Text(text = stringResource(Res.string.file)) },
                         modifier = modifier
                             .handleFileDrag {
                                 if (it != null) {
@@ -171,7 +172,7 @@ internal fun DecryptView() {
                     OutlinedTextField(
                         value = decryptKey,
                         onValueChange = { decryptKey = it },
-                        label = { Text(text = stringResource(MR.strings.decryption_key)) },
+                        label = { Text(text = stringResource(Res.string.decryption_key)) },
                         singleLine = true,
                         trailingIcon = {
                             IconButton(
@@ -179,7 +180,7 @@ internal fun DecryptView() {
                             ) {
                                 Icon(
                                     imageVector = Icons.Default.Info,
-                                    contentDescription = stringResource(MR.strings.help),
+                                    contentDescription = stringResource(Res.string.help),
                                 )
                             }
                         },
@@ -205,13 +206,13 @@ internal fun DecryptView() {
 
             InWindowAlertDialog(
                 showing = showingDecryptHelpDialog,
-                title = { Text(text = stringResource(MR.strings.decryption_key)) },
-                text = { Text(text = stringResource(MR.strings.decryption_key_help)) },
+                title = { Text(text = stringResource(Res.string.decryption_key)) },
+                text = { Text(text = stringResource(Res.string.decryption_key_help)) },
                 buttons = {
                     TextButton(
                         onClick = { showingDecryptHelpDialog = false },
                     ) {
-                        Text(text = stringResource(MR.strings.ok))
+                        Text(text = stringResource(Res.string.ok))
                     }
                 },
                 onDismissRequest = { showingDecryptHelpDialog = false },

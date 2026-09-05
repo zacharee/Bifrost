@@ -22,12 +22,21 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.compose.painterResource
-import dev.icerock.moko.resources.compose.stringResource
 import dev.zwander.compose.alertdialog.InWindowAlertDialog
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.about
+import tk.zwander.common.generated.resources.currency_usd
+import tk.zwander.common.generated.resources.donate
+import tk.zwander.common.generated.resources.github
+import tk.zwander.common.generated.resources.heart
+import tk.zwander.common.generated.resources.mastodon
+import tk.zwander.common.generated.resources.ok
+import tk.zwander.common.generated.resources.patreon
+import tk.zwander.common.generated.resources.patreonSupporters
 import tk.zwander.common.util.UrlHandler
 import tk.zwander.commonCompose.util.rememberIsOverScaledThreshold
-import tk.zwander.samloaderkotlin.resources.MR
 
 /**
  * The footer shown on all pages.
@@ -73,7 +82,7 @@ fun FooterView(
                         ) {
                             Icon(
                                 imageVector = Icons.Default.Info,
-                                contentDescription = stringResource(MR.strings.about)
+                                contentDescription = stringResource(Res.string.about)
                             )
                         }
                     }
@@ -86,7 +95,7 @@ fun FooterView(
                         }
                     ) {
                         Icon(
-                            painterResource(MR.images.heart), stringResource(MR.strings.patreonSupporters),
+                            painterResource(Res.drawable.heart), stringResource(Res.string.patreonSupporters),
                             modifier = Modifier.padding(8.dp).size(24.dp)
                         )
                     }
@@ -99,7 +108,7 @@ fun FooterView(
                         }
                     ) {
                         Icon(
-                            painterResource(MR.images.github), stringResource(MR.strings.github),
+                            painterResource(Res.drawable.github), stringResource(Res.string.github),
                             modifier = Modifier.padding(8.dp).size(24.dp)
                         )
                     }
@@ -112,7 +121,7 @@ fun FooterView(
                         },
                     ) {
                         Icon(
-                            painterResource(MR.images.mastodon), stringResource(MR.strings.mastodon),
+                            painterResource(Res.drawable.mastodon), stringResource(Res.string.mastodon),
                             modifier = Modifier.padding(8.dp).size(24.dp)
                         )
                     }
@@ -125,7 +134,7 @@ fun FooterView(
                         },
                     ) {
                         Icon(
-                            painterResource(MR.images.patreon), stringResource(MR.strings.patreon),
+                            painterResource(Res.drawable.patreon), stringResource(Res.string.patreon),
                             modifier = Modifier.padding(8.dp).size(24.dp)
                         )
                     }
@@ -138,7 +147,7 @@ fun FooterView(
                         },
                     ) {
                         Icon(
-                            painterResource(MR.images.currency_usd), stringResource(MR.strings.donate),
+                            painterResource(Res.drawable.currency_usd), stringResource(Res.string.donate),
                             modifier = Modifier.padding(8.dp).size(24.dp)
                         )
                     }
@@ -155,14 +164,14 @@ fun FooterView(
         showing = showingAboutDialog,
         onDismissRequest = { showingAboutDialog = false },
         title = {
-            Text(text = stringResource(MR.strings.about))
+            Text(text = stringResource(Res.string.about))
         },
         text = {
             AboutInfo()
         },
         buttons = {
             TextButton(onClick = { showingAboutDialog = false }) {
-                Text(text = stringResource(MR.strings.ok))
+                Text(text = stringResource(Res.string.ok))
             }
         }
     )

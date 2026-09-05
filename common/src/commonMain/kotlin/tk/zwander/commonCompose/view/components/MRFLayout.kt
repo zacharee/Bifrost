@@ -26,16 +26,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.StringResource
-import dev.icerock.moko.resources.compose.stringResource
 import dev.zwander.compose.alertdialog.InWindowAlertDialog
+import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.stringResource
 import tk.zwander.common.data.imei.IMEIGenerator
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.*
 import tk.zwander.common.util.BifrostSettings
 import tk.zwander.commonCompose.model.BaseModel
 import tk.zwander.commonCompose.model.DownloadModel
 import tk.zwander.commonCompose.util.OffsetCorrectedIdentityTransformation
 import tk.zwander.commonCompose.util.collectAsImmediateMutableState
-import tk.zwander.samloaderkotlin.resources.MR
 
 /**
  * A common container for the model, region, and firmware text inputs used in
@@ -92,7 +93,7 @@ internal fun MRFLayout(
                     }
                 },
                 modifier = modifier,
-                label = { Text(text = stringResource(MR.strings.modelHint)) },
+                label = { Text(text = stringResource(Res.string.modelHint)) },
                 readOnly = !canChangeOption,
                 keyboardOptions = KeyboardOptions(KeyboardCapitalization.Characters),
                 singleLine = true,
@@ -110,7 +111,7 @@ internal fun MRFLayout(
                     }
                 },
                 modifier = modifier,
-                label = { Text(text = stringResource(MR.strings.regionHint)) },
+                label = { Text(text = stringResource(Res.string.regionHint)) },
                 readOnly = !canChangeOption,
                 keyboardOptions = KeyboardOptions(KeyboardCapitalization.Characters),
                 singleLine = true,
@@ -120,7 +121,7 @@ internal fun MRFLayout(
                     ) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.List,
-                            contentDescription = stringResource(MR.strings.chooseCsc),
+                            contentDescription = stringResource(Res.string.chooseCsc),
                         )
                     }
                 },
@@ -141,7 +142,7 @@ internal fun MRFLayout(
                     DynamicField(
                         value = firmwareState,
                         onValueChange = { firmwareState = it },
-                        labelRes = MR.strings.firmware,
+                        labelRes = Res.string.firmware,
                         readOnly = !canChangeFirmware,
                         transform = {
                             it.transformText(allowLowercase)
@@ -155,7 +156,7 @@ internal fun MRFLayout(
                     DynamicField(
                         value = imeiState.replace("\n", ";"),
                         onValueChange = { imeiState = it.replace(";", "\n") },
-                        labelRes = MR.strings.imei_serial,
+                        labelRes = Res.string.imei_serial,
                         readOnly = !canChangeOption,
                         trailingIcon = {
                             Row(
@@ -166,7 +167,7 @@ internal fun MRFLayout(
                                 ) {
                                     Icon(
                                         imageVector = Icons.Default.Edit,
-                                        contentDescription = stringResource(MR.strings.edit),
+                                        contentDescription = stringResource(Res.string.edit),
                                     )
                                 }
 
@@ -175,7 +176,7 @@ internal fun MRFLayout(
                                 ) {
                                     Icon(
                                         imageVector = Icons.Default.Info,
-                                        contentDescription = stringResource(MR.strings.help),
+                                        contentDescription = stringResource(Res.string.help),
                                     )
                                 }
                             }
@@ -226,11 +227,11 @@ internal fun MRFLayout(
     InWindowAlertDialog(
         showing = showingImeiHelp,
         onDismissRequest = { showingImeiHelp = false },
-        title = { Text(text = stringResource(MR.strings.imei_serial)) },
-        text = { Text(text = stringResource(MR.strings.imei_serial_help)) },
+        title = { Text(text = stringResource(Res.string.imei_serial)) },
+        text = { Text(text = stringResource(Res.string.imei_serial_help)) },
         buttons = {
             TextButton(onClick = { showingImeiHelp = false }) {
-                Text(text = stringResource(MR.strings.ok))
+                Text(text = stringResource(Res.string.ok))
             }
         },
     )
@@ -238,7 +239,7 @@ internal fun MRFLayout(
     InWindowAlertDialog(
         showing = showingImeiEditor,
         onDismissRequest = { showingImeiEditor = false },
-        title = { Text(text = stringResource(MR.strings.edit)) },
+        title = { Text(text = stringResource(Res.string.edit)) },
         text = {
             TextField(
                 value = imeiState,
@@ -248,7 +249,7 @@ internal fun MRFLayout(
         },
         buttons = {
             TextButton(onClick = { showingImeiEditor = false }) {
-                Text(text = stringResource(MR.strings.close))
+                Text(text = stringResource(Res.string.close))
             }
         },
     )

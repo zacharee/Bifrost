@@ -11,16 +11,15 @@ import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import tk.zwander.common.generated.resources.Res
 import tk.zwander.common.util.I18n.getCountryNameForCode
 import tk.zwander.common.util.globalHttpClient
-import tk.zwander.common.util.invoke
-import tk.zwander.samloaderkotlin.resources.MR
 
 @OptIn(DelicateCoroutinesApi::class)
 @Suppress("MemberVisibilityCanBePrivate", "unused")
 data object CSCDB {
     const val LIVE_ENDPOINT =
-        "https://raw.githubusercontent.com/zacharee/SamloaderKotlin/master/common/src/commonMain/moko-resources/files/cscs.csv"
+        "https://raw.githubusercontent.com/zacharee/SamloaderKotlin/master/common/src/commonMain/composeResources/files/cscs.csv"
 
     // Most of these are from:
     // https://tsar3000.com/list-of-samsung-csc-codes-samsung-firmware-csc-codes/
@@ -94,8 +93,8 @@ data object CSCDB {
         }
     }
 
-    private fun loadLocalCsv() {
-        val cscString = MR.files.cscs_csv()?.decodeToString() ?: return
+    private suspend fun loadLocalCsv() {
+        val cscString = Res.readBytes("files/cscs.csv").decodeToString()
 
         loadCsv(cscString)
     }

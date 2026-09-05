@@ -29,18 +29,20 @@ import com.mayakapps.compose.windowstyler.WindowBackdrop
 import com.mayakapps.compose.windowstyler.WindowFrameStyle
 import com.mayakapps.compose.windowstyler.WindowStyle
 import com.sun.jna.ptr.IntByReference
-import dev.icerock.moko.resources.compose.painterResource
 import dev.zwander.compose.alertdialog.LocalWindowDecorations
 import dev.zwander.compose.rememberThemeInfo
 import dev.zwander.kmp.platform.HostArch
 import dev.zwander.kmp.platform.HostOS
 import dev.zwander.kmp.platform.OSVersion
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.skia.DirectContext
 import org.jetbrains.skiko.GraphicsApi
 import org.jetbrains.skiko.RenderException
 import org.jetbrains.skiko.SkiaLayer
 import tk.zwander.common.GradleConfig
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.icon_rounded
 import tk.zwander.common.util.BifrostSettings
 import tk.zwander.common.util.BugsnagUtils
 import tk.zwander.common.util.isWindows11
@@ -55,7 +57,6 @@ import tk.zwander.commonCompose.view.LocalPagerState
 import tk.zwander.commonCompose.view.MacMenuBar
 import tk.zwander.commonCompose.view.components.Page
 import tk.zwander.commonCompose.view.keyCodeHandler
-import tk.zwander.samloaderkotlin.resources.MR
 import java.awt.Desktop
 import java.awt.Dimension
 import java.awt.EventQueue
@@ -156,7 +157,7 @@ fun main() {
             val density = LocalDensity.current
             val pagerState = LocalPagerState.current
 
-            val iconPainter = painterResource(MR.images.icon_rounded)
+            val iconPainter = painterResource(Res.drawable.icon_rounded)
 
             DisposableEffect(null) {
                 if (Desktop.getDesktop().isSupported(Desktop.Action.APP_ABOUT)) {
@@ -273,10 +274,11 @@ fun main() {
                         if (HostOS.current == HostOS.MacOS) {
                             SwingPanel(
                                 factory = {
-                                    JPanel()
+                                    JPanel().apply {
+                                        background = Color.Transparent.toAwtColor()
+                                    }
                                 },
                                 modifier = Modifier.fillMaxSize(),
-                                background = Color.Transparent,
                                 update = {
                                     it.putClientProperty(
                                         "Aqua.backgroundStyle",

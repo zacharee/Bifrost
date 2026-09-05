@@ -2,7 +2,7 @@ package tk.zwander.common.data
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import dev.icerock.moko.resources.StringResource
+import org.jetbrains.compose.resources.StringResource
 import tk.zwander.common.util.SettingsKey
 
 sealed interface IOptionItem {

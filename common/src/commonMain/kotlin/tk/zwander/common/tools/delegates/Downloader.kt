@@ -8,6 +8,15 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.withContext
 import tk.zwander.common.data.BinaryFileInfo
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.checkingCRC
+import tk.zwander.common.generated.resources.checkingMD5
+import tk.zwander.common.generated.resources.crcCheckFailed
+import tk.zwander.common.generated.resources.decrypting
+import tk.zwander.common.generated.resources.done
+import tk.zwander.common.generated.resources.downloading
+import tk.zwander.common.generated.resources.firmwareCheckError
+import tk.zwander.common.generated.resources.md5CheckFailed
 import tk.zwander.common.tools.CryptUtils
 import tk.zwander.common.tools.FusClient
 import tk.zwander.common.tools.FusClientLegacy
@@ -22,8 +31,6 @@ import tk.zwander.common.util.eventManager
 import tk.zwander.common.util.invoke
 import tk.zwander.common.util.streamOperationWithProgress
 import tk.zwander.commonCompose.model.DownloadModel
-import tk.zwander.samloaderkotlin.resources.MR
-import kotlin.time.ExperimentalTime
 
 object Downloader {
     interface DownloadErrorCallback {
@@ -84,7 +91,7 @@ object Downloader {
         println("Downloading $legacy")
 
         eventManager.sendEvent(Event.Download.Start)
-        model.statusText.value = MR.strings.downloading()
+        model.statusText.value = Res.string.downloading()
 
         val info = Request.retrieveBinaryFileInfo(
             fw = model.fw.value,
@@ -226,7 +233,7 @@ object Downloader {
 
                     eventManager.sendEvent(
                         Event.Download.Progress(
-                            status = MR.strings.downloading(),
+                            status = Res.string.downloading(),
                             current = current,
                             max = max,
                         )
@@ -238,7 +245,7 @@ object Downloader {
 
             if (crc32 != null) {
                 model.speed.value = 0L
-                model.statusText.value = MR.strings.checkingCRC()
+                model.statusText.value = Res.string.checkingCRC()
                 val result = CryptUtils.checkCrc32(
                     encFile.openInputStream() ?: return true,
                     encFile.getLength(),
@@ -249,7 +256,7 @@ object Downloader {
 
                     eventManager.sendEvent(
                         Event.Download.Progress(
-                            status = MR.strings.checkingCRC(),
+                            status = Res.string.checkingCRC(),
                             current = current,
                             max = max,
                         )
@@ -257,18 +264,18 @@ object Downloader {
                 }
 
                 if (!result) {
-                    model.endJob(MR.strings.crcCheckFailed())
+                    model.endJob(Res.string.crcCheckFailed())
                     return true
                 }
             }
 
             if (md5 != null) {
                 model.speed.value = 0L
-                model.statusText.value = MR.strings.checkingMD5()
+                model.statusText.value = Res.string.checkingMD5()
 
                 eventManager.sendEvent(
                     Event.Download.Progress(
-                        status = MR.strings.checkingMD5(),
+                        status = Res.string.checkingMD5(),
                         current = 0,
                         max = 1,
                     )
@@ -282,7 +289,7 @@ object Downloader {
                 }
 
                 if (!result) {
-                    model.endJob(MR.strings.md5CheckFailed())
+                    model.endJob(Res.string.md5CheckFailed())
                     return true
                 }
             }
@@ -326,7 +333,7 @@ object Downloader {
             }
 
             model.speed.value = 0L
-            model.statusText.value = MR.strings.decrypting()
+            model.statusText.value = Res.string.decrypting()
 
             val key =
                 if (fullFileName.endsWith(".enc2")) {
@@ -350,7 +357,7 @@ object Downloader {
 
                 eventManager.sendEvent(
                     Event.Download.Progress(
-                        status = MR.strings.decrypting(),
+                        status = Res.string.decrypting(),
                         current = current,
                         max = max,
                     )
@@ -362,7 +369,7 @@ object Downloader {
                 extractedEncFile.delete()
             }
 
-            onFinish(false, MR.strings.done())
+            onFinish(false, Res.string.done())
             true
         } catch (e: Throwable) {
             e.printStackTrace()
@@ -384,7 +391,7 @@ object Downloader {
 
         if (error != null) {
             model.endJob(
-                MR.strings.firmwareCheckError(
+                Res.string.firmwareCheckError(
                     error.message.toString(),
                     output.replace("\t", "  ")
                 )

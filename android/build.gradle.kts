@@ -4,7 +4,6 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.compose)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.moko.resources)
 }
 
 group = rootProject.extra["groupName"].toString()
@@ -75,10 +74,6 @@ kotlin {
     compilerOptions {
         jvmTarget.set(JvmTarget.fromTarget(rootProject.extra["javaVersionEnum"].toString()))
     }
-}
-
-multiplatformResources {
-    resourcesPackage.set("tk.zwander.samloaderkotlin.android")
 }
 
 afterEvaluate {

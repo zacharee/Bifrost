@@ -8,10 +8,11 @@ import androidx.compose.ui.window.FrameWindowScope
 import androidx.compose.ui.window.MenuBar
 import androidx.compose.ui.window.WindowPlacement
 import androidx.compose.ui.window.WindowState
-import dev.icerock.moko.resources.compose.stringResource
 import dev.zwander.kmp.platform.HostOS
+import org.jetbrains.compose.resources.stringResource
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.*
 import tk.zwander.common.util.UrlHandler
-import tk.zwander.samloaderkotlin.resources.MR
 
 @Composable
 fun FrameWindowScope.MacMenuBar(
@@ -21,10 +22,10 @@ fun FrameWindowScope.MacMenuBar(
     if (HostOS.current == HostOS.MacOS) {
         MenuBar {
             Menu(
-                text = stringResource(MR.strings.window),
+                text = stringResource(Res.string.window),
             ) {
                 Item(
-                    text = stringResource(MR.strings.minimize),
+                    text = stringResource(Res.string.minimize),
                     onClick = {
                         mainWindowState.isMinimized = true
                     },
@@ -32,14 +33,14 @@ fun FrameWindowScope.MacMenuBar(
                 )
 
                 Item(
-                    text = stringResource(MR.strings.zoom),
+                    text = stringResource(Res.string.zoom),
                     onClick = {
                         mainWindowState.placement = WindowPlacement.Maximized
                     },
                 )
 
                 Item(
-                    text = stringResource(MR.strings.close),
+                    text = stringResource(Res.string.close),
                     onClick = {
                         applicationScope.exitApplication()
                     },
@@ -48,31 +49,31 @@ fun FrameWindowScope.MacMenuBar(
             }
 
             Menu(
-                text = stringResource(MR.strings.help),
+                text = stringResource(Res.string.help),
             ) {
                 Item(
-                    text = stringResource(MR.strings.github),
+                    text = stringResource(Res.string.github),
                     onClick = {
                         UrlHandler.launchUrl("https://github.com/zacharee/SamloaderKotlin")
                     },
                 )
 
                 Item(
-                    text = stringResource(MR.strings.mastodon),
+                    text = stringResource(Res.string.mastodon),
                     onClick = {
                         UrlHandler.launchUrl("https://androiddev.social/@wander1236")
                     },
                 )
 
                 Item(
-                    text = stringResource(MR.strings.patreon),
+                    text = stringResource(Res.string.patreon),
                     onClick = {
                         UrlHandler.launchUrl("https://patreon.com/zacharywander")
                     },
                 )
 
                 Item(
-                    text = stringResource(MR.strings.donate),
+                    text = stringResource(Res.string.donate),
                     onClick = {
                         UrlHandler.launchUrl("https://www.paypal.com/donate/?hosted_button_id=EWAPDSENZ7U44")
                     },

@@ -5,7 +5,6 @@ import kotlinx.coroutines.withContext
 import net.harawata.appdirs.AppDirsFactory
 import tk.zwander.common.GradleConfig
 import tk.zwander.common.util.RandomAccessStream
-import tk.zwander.samloaderkotlin.resources.MR
 import java.io.File
 import java.io.RandomAccessFile
 
@@ -23,7 +22,8 @@ actual object AuthParamsHandler {
         tempFile.delete()
         tempFile.createNewFile()
         withContext(Dispatchers.IO) {
-            MR.files.auth_param_dat.resourcesClassLoader.getResourceAsStream(MR.files.auth_param_dat.filePath)?.use { input ->
+            this::class.java.classLoader.getResourceAsStream("files/auth_param.dat")?.use { input ->
+                println("COPYING")
                 tempFile.outputStream().use { output ->
                     input.copyTo(output)
                 }

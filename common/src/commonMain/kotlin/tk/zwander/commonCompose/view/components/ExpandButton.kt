@@ -18,8 +18,10 @@ import androidx.compose.ui.text.Placeholder
 import androidx.compose.ui.text.PlaceholderVerticalAlign
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.unit.sp
-import dev.icerock.moko.resources.compose.stringResource
-import tk.zwander.samloaderkotlin.resources.MR
+import org.jetbrains.compose.resources.stringResource
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.hide
+import tk.zwander.common.generated.resources.show
 
 @Composable
 internal fun ExpandButton(
@@ -45,7 +47,7 @@ internal fun ExpandButton(
         ) {
             Icon(
                 imageVector = Icons.Filled.KeyboardArrowDown,
-                contentDescription = stringResource(if (expanded) MR.strings.hide else MR.strings.show),
+                contentDescription = stringResource(if (expanded) Res.string.hide else Res.string.show),
                 modifier = Modifier.rotate(animatedRotation),
             )
             Crossfade(expanded) {

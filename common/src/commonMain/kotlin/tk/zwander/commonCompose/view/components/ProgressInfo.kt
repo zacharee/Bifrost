@@ -4,7 +4,6 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -23,11 +22,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.compose.stringResource
+import org.jetbrains.compose.resources.stringResource
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.*
 import tk.zwander.common.util.toStringDecimal
 import tk.zwander.commonCompose.model.BaseModel
 import tk.zwander.commonCompose.util.CustomArrangement
-import tk.zwander.samloaderkotlin.resources.MR
 import kotlin.math.round
 import kotlin.math.roundToInt
 
@@ -35,7 +35,6 @@ import kotlin.math.roundToInt
  * A progress indicator.
  * @param model the view model to use as a data source.
  */
-@OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun ProgressInfo(model: BaseModel) {
     Column(
@@ -94,7 +93,7 @@ internal fun ProgressInfo(model: BaseModel) {
                             (((if (shouldUseMB) (speedKBps / 1024.0) else speedKBps) * 100.0).roundToInt() / 100.0).toStringDecimal(2)
 
                         FormatText(
-                            text = if (shouldUseMB) stringResource(MR.strings.mibs) else stringResource(MR.strings.kibs),
+                            text = if (shouldUseMB) stringResource(Res.string.mibs) else stringResource(Res.string.kibs),
                             textFormat = finalSpeed,
                             valueFontFamily = FontFamily.Monospace,
                         )
@@ -103,7 +102,7 @@ internal fun ProgressInfo(model: BaseModel) {
                         val totalMB = ((progress.second.toFloat() / 1024.0 / 1024.0 * 100.0).roundToInt() / 100.0).toStringDecimal(2)
 
                         FormatText(
-                            text = stringResource(MR.strings.mib),
+                            text = stringResource(Res.string.mib),
                             textFormat = "$currentMB/$totalMB",
                             valueFontFamily = FontFamily.Monospace,
                         )

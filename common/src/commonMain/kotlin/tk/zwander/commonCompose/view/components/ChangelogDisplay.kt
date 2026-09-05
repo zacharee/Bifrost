@@ -28,11 +28,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.min
 import androidx.compose.ui.unit.sp
 import my.nanihadesuka.compose.ColumnScrollbar
+import org.jetbrains.compose.resources.stringResource
 import tk.zwander.common.data.changelog.Changelog
-import tk.zwander.common.util.invoke
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.release
+import tk.zwander.common.generated.resources.security
 import tk.zwander.commonCompose.util.ThemeConstants
 import tk.zwander.commonCompose.util.toRichHtmlString
-import tk.zwander.samloaderkotlin.resources.MR
 
 @Composable
 internal fun ChangelogDisplay(
@@ -64,19 +66,14 @@ internal fun ChangelogDisplay(
                     }
                     .padding(8.dp),
             ) {
-                val infoItems by derivedStateOf {
-                    val list = mutableListOf<String>()
-
+                val infoItems = listOfNotNull(
                     changelog?.relDate?.let { relDate ->
-                        list.add(MR.strings.release(relDate))
-                    }
-
+                        stringResource(Res.string.release, relDate)
+                    },
                     changelog?.secPatch?.let { secPatch ->
-                        list.add(MR.strings.security(secPatch))
-                    }
-
-                    list
-                }
+                        stringResource(Res.string.security, secPatch)
+                    },
+                )
 
                 if (infoItems.isNotEmpty()) {
                     Text(

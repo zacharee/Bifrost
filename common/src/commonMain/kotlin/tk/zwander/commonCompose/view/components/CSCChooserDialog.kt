@@ -28,6 +28,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -35,11 +36,23 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.compose.painterResource
-import dev.icerock.moko.resources.compose.stringResource
 import dev.zwander.compose.alertdialog.InWindowAlertDialog
 import my.nanihadesuka.compose.LazyColumnScrollbar
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import tk.zwander.common.data.csc.CSCDB
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.ascending
+import tk.zwander.common.generated.resources.cancel
+import tk.zwander.common.generated.resources.carriers
+import tk.zwander.common.generated.resources.chooseCsc
+import tk.zwander.common.generated.resources.clear
+import tk.zwander.common.generated.resources.countries
+import tk.zwander.common.generated.resources.csc
+import tk.zwander.common.generated.resources.descending
+import tk.zwander.common.generated.resources.search
+import tk.zwander.common.generated.resources.sort
+import tk.zwander.common.generated.resources.unfold_more
 import tk.zwander.commonCompose.model.CSCDialogModel
 import tk.zwander.commonCompose.model.Column
 import tk.zwander.commonCompose.model.SelectionState
@@ -47,7 +60,6 @@ import tk.zwander.commonCompose.util.OffsetCorrectedIdentityTransformation
 import tk.zwander.commonCompose.util.ThemeConstants
 import tk.zwander.commonCompose.util.collectAsImmediateMutableState
 import tk.zwander.commonCompose.util.collectAsMutableState
-import tk.zwander.samloaderkotlin.resources.MR
 
 @Composable
 fun CSCChooserDialog(
@@ -60,7 +72,7 @@ fun CSCChooserDialog(
         modifier = modifier,
         showing = showing,
         title = {
-            Text(text = stringResource(MR.strings.chooseCsc))
+            Text(text = stringResource(Res.string.chooseCsc))
         },
         text = {
             var filter by CSCDialogModel.filter.collectAsImmediateMutableState()
@@ -71,11 +83,13 @@ fun CSCChooserDialog(
 
             val listState = rememberLazyListState()
 
-            LaunchedEffect(listState.firstVisibleItemIndex) {
-                if (items.isNotEmpty()) {
-                    scrollPosition = listState.firstVisibleItemIndex to
-                            listState.firstVisibleItemScrollOffset
-                }
+            LaunchedEffect(listState) {
+                snapshotFlow { listState.firstVisibleItemIndex to listState.firstVisibleItemScrollOffset }
+                    .collect { firstVisibleItem ->
+                        if (items.isNotEmpty()) {
+                            scrollPosition = firstVisibleItem
+                        }
+                    }
             }
 
             LaunchedEffect(items.size) {
@@ -105,7 +119,7 @@ fun CSCChooserDialog(
                 value = filter,
                 onValueChange = { filter = it },
                 label = {
-                    Text(text = stringResource(MR.strings.search))
+                    Text(text = stringResource(Res.string.search))
                 },
                 trailingIcon = if (filter.isNotBlank()) {
                     {
@@ -114,7 +128,7 @@ fun CSCChooserDialog(
                         ) {
                             Icon(
                                 imageVector = Icons.Default.Clear,
-                                contentDescription = stringResource(MR.strings.clear),
+                                contentDescription = stringResource(Res.string.clear),
                             )
                         }
                     }
@@ -145,21 +159,21 @@ fun CSCChooserDialog(
                             horizontalArrangement = Arrangement.spacedBy(2.dp),
                         ) {
                             HeaderItem(
-                                text = stringResource(MR.strings.csc),
+                                text = stringResource(Res.string.csc),
                                 modifier = Modifier.weight(codeWeight),
                                 state = columnStates[Column.CSC]!!,
                                 onClick = { onColumnClick(Column.CSC) }
                             )
 
                             HeaderItem(
-                                text = stringResource(MR.strings.countries),
+                                text = stringResource(Res.string.countries),
                                 modifier = Modifier.weight(countryWeight),
                                 state = columnStates[Column.COUNTRY]!!,
                                 onClick = { onColumnClick(Column.COUNTRY) }
                             )
 
                             HeaderItem(
-                                text = stringResource(MR.strings.carriers),
+                                text = stringResource(Res.string.carriers),
                                 modifier = Modifier.weight(carrierWeight),
                                 state = columnStates[Column.CARRIER]!!,
                                 onClick = { onColumnClick(Column.CARRIER) }
@@ -206,7 +220,7 @@ fun CSCChooserDialog(
             TextButton(
                 onClick = onDismissRequest
             ) {
-                Text(text = stringResource(MR.strings.cancel))
+                Text(text = stringResource(Res.string.cancel))
             }
         },
         onDismissRequest = onDismissRequest,
@@ -238,12 +252,12 @@ private fun HeaderItem(
             painter = when (state) {
                 SelectionState.ASCENDING -> rememberVectorPainter(Icons.Default.KeyboardArrowUp)
                 SelectionState.DESCENDING -> rememberVectorPainter(Icons.Default.KeyboardArrowDown)
-                SelectionState.NONE -> painterResource(MR.images.unfold_more)
+                SelectionState.NONE -> painterResource(Res.drawable.unfold_more)
             },
             contentDescription = when (state) {
-                SelectionState.ASCENDING -> stringResource(MR.strings.ascending)
-                SelectionState.DESCENDING -> stringResource(MR.strings.descending)
-                SelectionState.NONE -> stringResource(MR.strings.sort)
+                SelectionState.ASCENDING -> stringResource(Res.string.ascending)
+                SelectionState.DESCENDING -> stringResource(Res.string.descending)
+                SelectionState.NONE -> stringResource(Res.string.sort)
             },
             modifier = Modifier.alpha(if (state == SelectionState.NONE) 0.5f else 1f)
                 .size(24.dp),

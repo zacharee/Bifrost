@@ -26,10 +26,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.ImageResource
-import dev.icerock.moko.resources.StringResource
-import dev.icerock.moko.resources.compose.painterResource
-import dev.icerock.moko.resources.compose.stringResource
+import org.jetbrains.compose.resources.DrawableResource
+import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.*
 import tk.zwander.commonCompose.view.LocalUseTransparencyEffects
 import tk.zwander.commonCompose.view.components.Page.Decrypter
 import tk.zwander.commonCompose.view.components.Page.Downloader
@@ -39,7 +41,6 @@ import tk.zwander.commonCompose.view.pages.DecryptView
 import tk.zwander.commonCompose.view.pages.DownloadView
 import tk.zwander.commonCompose.view.pages.HistoryView
 import tk.zwander.commonCompose.view.pages.SettingsAboutView
-import tk.zwander.samloaderkotlin.resources.MR
 import kotlin.time.ExperimentalTime
 
 val pages = arrayOf(Downloader, Decrypter, History, SettingsAbout)
@@ -50,17 +51,17 @@ val pages = arrayOf(Downloader, Decrypter, History, SettingsAbout)
 sealed class Page(
     val render: @Composable () -> Unit,
     val labelRes: StringResource,
-    val iconRes: ImageResource,
+    val iconRes: DrawableResource,
     val index: Int,
 ) {
-    data object Downloader : Page({ DownloadView() }, MR.strings.downloader, MR.images.download, 0)
+    data object Downloader : Page({ DownloadView() }, Res.string.downloader, Res.drawable.download, 0)
 
     data object Decrypter :
-        Page({ DecryptView() }, MR.strings.decrypter, MR.images.lock_open_outline, 1)
+        Page({ DecryptView() }, Res.string.decrypter, Res.drawable.lock_open_outline, 1)
 
-    data object History : Page({ HistoryView() }, MR.strings.history, MR.images.history, 2)
+    data object History : Page({ HistoryView() }, Res.string.history, Res.drawable.history, 2)
 
-    data object SettingsAbout : Page({ SettingsAboutView() }, MR.strings.more, MR.images.cog, 3)
+    data object SettingsAbout : Page({ SettingsAboutView() }, Res.string.more, Res.drawable.cog, 3)
 }
 
 /**

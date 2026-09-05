@@ -29,13 +29,15 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import dev.icerock.moko.resources.compose.stringResource
 import dev.zwander.kmp.platform.HostOS
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.launch
 import my.nanihadesuka.compose.LazyVerticalStaggeredGridScrollbar
+import org.jetbrains.compose.resources.stringResource
 import tk.zwander.common.data.IOptionItem
+import tk.zwander.common.generated.resources.Res
+import tk.zwander.common.generated.resources.*
 import tk.zwander.common.util.BifrostSettings
 import tk.zwander.common.util.LocalPhoneInfo
 import tk.zwander.common.util.UpdateUtil
@@ -47,14 +49,13 @@ import tk.zwander.commonCompose.view.components.PhoneInfoView
 import tk.zwander.commonCompose.view.components.settingsitems.ActionPreference
 import tk.zwander.commonCompose.view.components.settingsitems.BooleanPreference
 import tk.zwander.commonCompose.view.components.settingsitems.LiteralPreference
-import tk.zwander.samloaderkotlin.resources.MR
 
 val options = arrayListOf<IOptionItem>().apply {
 //    if (isWindows11) {
 //        add(
 //            IOptionItem.BasicOptionItem.BooleanItem(
-//                label = MR.strings.useMicaEffect,
-//                desc = MR.strings.useMicaEffectDesc,
+//                label = Res.string.useMicaEffect,
+//                desc = Res.string.useMicaEffectDesc,
 //                key = BifrostSettings.Keys.useMicaEffect,
 //            ),
 //        )
@@ -63,8 +64,8 @@ val options = arrayListOf<IOptionItem>().apply {
     if (HostOS.current == HostOS.MacOS) {
         add(
             IOptionItem.BasicOptionItem.BooleanItem(
-                label = MR.strings.useVibrancyEffect,
-                desc = MR.strings.useVibrancyEffectDesc,
+                label = Res.string.useVibrancyEffect,
+                desc = Res.string.useVibrancyEffectDesc,
                 key = BifrostSettings.Keys.useVibrancyEffect,
             ),
         )
@@ -73,8 +74,8 @@ val options = arrayListOf<IOptionItem>().apply {
     if (HostOS.current == HostOS.Android) {
         add(
             IOptionItem.BasicOptionItem.BooleanItem(
-                label = MR.strings.use_file_framework,
-                desc = MR.strings.use_file_framework_desc,
+                label = Res.string.use_file_framework,
+                desc = Res.string.use_file_framework_desc,
                 key = BifrostSettings.Keys.useFileFramework,
                 validator = { PlatformSettingsActions.androidHasStoragePermission() },
                 onEnabledAction = { PlatformSettingsActions.androidRequestStoragePermission() },
@@ -84,29 +85,29 @@ val options = arrayListOf<IOptionItem>().apply {
 
     add(
         IOptionItem.BasicOptionItem.BooleanItem(
-            label = MR.strings.allowLowercaseCharacters,
-            desc = MR.strings.allowLowercaseCharactersDesc,
+            label = Res.string.allowLowercaseCharacters,
+            desc = Res.string.allowLowercaseCharactersDesc,
             key = BifrostSettings.Keys.allowLowercaseCharacters,
         ),
     )
     add(
         IOptionItem.BasicOptionItem.BooleanItem(
-            label = MR.strings.autoDeleteEncryptedFirmware,
-            desc = MR.strings.autoDeleteEncryptedFirmwareDesc,
+            label = Res.string.autoDeleteEncryptedFirmware,
+            desc = Res.string.autoDeleteEncryptedFirmwareDesc,
             key = BifrostSettings.Keys.autoDeleteEncryptedFirmware,
         ),
     )
     add(
         IOptionItem.BasicOptionItem.BooleanItem(
-            label = MR.strings.enable_offline_decryption,
-            desc = MR.strings.enable_offline_decryption_desc,
+            label = Res.string.enable_offline_decryption,
+            desc = Res.string.enable_offline_decryption_desc,
             key = BifrostSettings.Keys.enableDecryptKeySave,
         ),
     )
     add(
         IOptionItem.ActionOptionItem(
-            label = MR.strings.removeSavedData,
-            desc = MR.strings.removeSavedDataDesc,
+            label = Res.string.removeSavedData,
+            desc = Res.string.removeSavedDataDesc,
             listKey = "remove_saved_data",
             action = {
                 BifrostSettings.settings.clear()
@@ -116,7 +117,7 @@ val options = arrayListOf<IOptionItem>().apply {
     if (HostOS.current != HostOS.IOS) {
         add(
             IOptionItem.LiteralOptionItem(
-                label = MR.strings.updates,
+                label = Res.string.updates,
                 desc = null,
                 listKey = "update_checker",
                 render = {
@@ -157,8 +158,8 @@ val options = arrayListOf<IOptionItem>().apply {
                                 Text(
                                     text = availableVersion
                                         ?.takeIf { version -> version.isNotBlank() }
-                                        ?.let { version -> stringResource(MR.strings.update_available, version) }
-                                        ?: stringResource(MR.strings.no_updates_available),
+                                        ?.let { version -> stringResource(Res.string.update_available, version) }
+                                        ?: stringResource(Res.string.no_updates_available),
                                 )
                             }
 
@@ -168,7 +169,7 @@ val options = arrayListOf<IOptionItem>().apply {
                                 exit = fadeOut(),
                             ) {
                                 Text(
-                                    text = stringResource(MR.strings.check_for_updates),
+                                    text = stringResource(Res.string.check_for_updates),
                                 )
                             }
                         }
@@ -191,7 +192,7 @@ val options = arrayListOf<IOptionItem>().apply {
                                         },
                                         enabled = !loading,
                                     ) {
-                                        Text(text = stringResource(MR.strings.update))
+                                        Text(text = stringResource(Res.string.update))
                                     }
                                 } else {
                                     Button(
@@ -204,7 +205,7 @@ val options = arrayListOf<IOptionItem>().apply {
                                         },
                                         enabled = !loading,
                                     ) {
-                                        Text(text = stringResource(MR.strings.check))
+                                        Text(text = stringResource(Res.string.check))
                                     }
                                 }
                             }

@@ -18,9 +18,8 @@ import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
+import tk.zwander.common.generated.resources.Res
 import tk.zwander.common.util.globalHttpClient
-import tk.zwander.common.util.invoke
-import tk.zwander.samloaderkotlin.resources.MR
 
 data object IMEIGenerator {
     fun makeImeisForTacs(
@@ -144,8 +143,8 @@ data object IMEIDatabase {
         return beforeSpaces.slice(0 until firstSlash)
     }
 
-    private fun loadLocalCsv() {
-        loadCsv(MR.files.tacs_csv()!!.decodeToString())
+    private suspend fun loadLocalCsv() {
+        loadCsv(Res.readBytes("files/tacs.csv").decodeToString())
     }
 
     private fun loadCsv(csvString: String) {

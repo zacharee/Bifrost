@@ -1,7 +1,6 @@
 package tk.zwander.common.util
 
-import dev.icerock.moko.resources.FileResource
-import dev.icerock.moko.resources.StringResource
+import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.getString
 
-expect operator fun StringResource.invoke(vararg args: Any): String
-expect operator fun FileResource.invoke(): ByteArray?
+suspend operator fun StringResource.invoke(vararg args: Any?) = getString(this, args)
