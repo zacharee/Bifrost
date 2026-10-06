@@ -8,6 +8,7 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
 import kotlinx.coroutines.*
+import tk.zwander.common.util.firmwareHttpEngine
 import tk.zwander.common.util.firstElementByTagName
 import tk.zwander.common.util.globalHttpClient
 import tk.zwander.common.util.ketch
@@ -40,12 +41,12 @@ interface IFusClient<Request : IFusClient.IRequest> {
         headers: Map<String, String>,
         progressCallback: suspend (current: Long, max: Long, bps: Long) -> Unit,
     ): DownloadTask {
+        firmwareHttpEngine.updateHeaders(url, headers)
         val existingTask = try {
-            ketch.tasks.value.find { it.request.value.url == url }
+            ketch.tasks.value.find { it.request.url == url }
                 ?.let { download ->
                     println(download.state.value)
                     if (download.state.value !is DownloadState.Completed) {
-                        download.updateHeaders(headers)
                         download.resume(Destination(dest.getAbsolutePath()))
                         download
                     } else {
@@ -56,7 +57,7 @@ interface IFusClient<Request : IFusClient.IRequest> {
         } catch (e: KetchError.Http) {
             e.printStackTrace()
             if (e.code == 401) {
-                ketch.tasks.value.findLast { it.request.value.url == url }?.remove()
+                ketch.tasks.value.findLast { it.request.url == url }?.remove()
                 null
             } else {
                 throw e

@@ -1,5 +1,3 @@
-@file:Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE", "EXPOSED_PARAMETER_TYPE")
-
 package tk.zwander.common.util
 
 import com.linroid.ketch.api.DownloadConfig
@@ -20,14 +18,18 @@ val globalHttpClient: HttpClient = HttpClient {
     install(HttpTimeout)
 }
 
-val ketch: Ketch = Ketch(
-    httpEngine = KtorHttpEngine(globalHttpClient.config {
+internal val firmwareHttpEngine = FirmwareHttpEngine(
+    KtorHttpEngine(globalHttpClient.config {
         install(HttpTimeout) {
             socketTimeoutMillis = HttpTimeoutConfig.INFINITE_TIMEOUT_MS
             requestTimeoutMillis = HttpTimeoutConfig.INFINITE_TIMEOUT_MS
             connectTimeoutMillis = HttpTimeoutConfig.INFINITE_TIMEOUT_MS
         }
     }),
+)
+
+val ketch: Ketch = Ketch(
+    httpEngine = firmwareHttpEngine,
     config = DownloadConfig(
         maxConnectionsPerDownload = 8,
     ),
